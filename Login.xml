@@ -4,10 +4,11 @@
 	<test thread-count="5" name="Test">
 		<classes>
 
+			<class name="LoginPageTestmodel.LoginPageTest" />
 
-			<class name="Com.HomePageTest.SearchFunctionalitypageTest" />
-			<class name="Com.HomePageTest.HomePageTest" />
-			
+
+
+
 
 		</classes>
 	</test> <!-- Test -->

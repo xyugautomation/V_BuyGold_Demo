@@ -1,6 +1,5 @@
 package LoginPageTestmodel;
 
-
 import org.testng.annotations.Test;
 
 import Base.launchbrowser;
@@ -8,7 +7,7 @@ import LoginModule.LoginPage;
 
 public class LoginPageTest extends launchbrowser {
 
-	@Test(priority = 1)
+	@Test(priority = 0)
 	public void validatalogout() throws InterruptedException {
 
 		LoginPage LP = new LoginPage(driver);
@@ -17,4 +16,5 @@ public class LoginPageTest extends launchbrowser {
 		LP.logout(driver);
 
 	}
+
 }

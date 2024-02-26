@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Com.HomePageTest.CrossBrowserPage">
+      <class name="LoginPageTestmodel.LoginPageTest">
         <methods>
+          <include name="validataInvalid"/>
           <include name="setup"/>
-          <include name="testApplication"/>
         </methods>
-      </class> <!-- Com.HomePageTest.CrossBrowserPage -->
+      </class> <!-- LoginPageTestmodel.LoginPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

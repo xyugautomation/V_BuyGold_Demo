@@ -1,4 +1,5 @@
 package com.HomePage;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,6 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class ClickableElementsTest {
 	private WebDriver driver;
 	private String baseUrl;
@@ -39,7 +41,6 @@ public class ClickableElementsTest {
 			// Click the element
 			element.click();
 
-			
 			// Check if it navigates to the correct page or performs the intended action
 			String currentUrl = driver.getCurrentUrl();
 			Assert.assertNotEquals(currentUrl, baseUrl,
@@ -47,10 +48,7 @@ public class ClickableElementsTest {
 
 			// Navigate back to the original page
 			driver.navigate().back();
-		
-		
-	
-		
+
 		}
 	}
 }

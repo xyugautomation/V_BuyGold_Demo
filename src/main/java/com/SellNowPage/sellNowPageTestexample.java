@@ -75,7 +75,7 @@ public class sellNowPageTestexample {
 	@FindBy(xpath = "//button[normalize-space()='Submit']")
 	WebElement submitbutton;
 
-	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/section[1]/section[1]/nav[1]/ul[1]/li[1]/img[1]")
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/section[1]/section[1]/nav[1]/ul[1]/li[1] ")
 	WebElement logo;
 
 	public sellNowPageTestexample(WebDriver driver) {
@@ -189,8 +189,14 @@ public class sellNowPageTestexample {
 
 		submitbutton.click();
 
-		Thread.sleep(4000);
-		logo.click();
+		if (driver != null) {
+
+			Thread.sleep(6000);
+
+			driver.navigate().back();
+		} else {
+			System.out.println("WebDriver is null. Cannot navigate back.");
+		}
 
 	}
 

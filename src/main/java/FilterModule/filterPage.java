@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 
 public class filterPage {
-	private static final int TIMEOUT_SECONDS = 30;
+	private static final int TIMEOUT_SECONDS = 60;
 	public static WebDriver driver;
 	@FindBy(xpath = "//div[3]//select[1]")
 	WebElement SelectCarat;

@@ -43,7 +43,18 @@ public class CrossBrowserPage {
 		// Test your application here
 		driver.get("http://52.77.24.76/");
 
+		
+		driver.manage().window().maximize();
 		// Add your test assertions here
+	
+	driver.close();
+	
+	
 	}
 
+	
+	
+	
+	
+	
 }

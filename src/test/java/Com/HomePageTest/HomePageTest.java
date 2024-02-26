@@ -5,7 +5,8 @@ import org.testng.annotations.Test;
 import com.HomePage.homePage;
 
 import Base.launchbrowser;
-public class HomePageTest  extends launchbrowser {
+
+public class HomePageTest extends launchbrowser {
 	public static launchbrowser setup;
 	public static homePage HPage;
 

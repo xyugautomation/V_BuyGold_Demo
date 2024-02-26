@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
+import org.testng.annotations.AfterMethod;
 
 public class LoginPage {
 	public static WebDriver driver;
@@ -68,6 +69,9 @@ public class LoginPage {
 		fluentWaitForElementToBeClickable(driver, Logout).click();
 		Thread.sleep(10000);
 		fluentWaitForElementToBeClickable(driver, YesButton).click();
+		
+		
+		driver.close();
 
 	}
 
@@ -85,7 +89,7 @@ public class LoginPage {
 		return wait.until((ExpectedCondition<WebElement>) driver1 -> element.isEnabled() ? element : null);
 	}
 
-	public void invalidatedata() throws InterruptedException {
+	public void invalidatedata(WebDriver driver) throws InterruptedException {
 
 		LoginButton.click();
 		Thread.sleep(3000);
@@ -120,5 +124,17 @@ public class LoginPage {
 			System.out.println("Test failed: Continue button remains disabled with valid input.");
 		}
 
+		
+		driver.close();
+		
 	}
+
+	  @AfterMethod
+	    public void tearDown() {
+	        // Close the WebDriver instance after each test method
+	        if (driver != null) {
+	            driver.quit();
+	        }
+	    }
+
 }

@@ -1,8 +1,10 @@
 package com.NavBarModule;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 public class BanglesPage {
 	@FindBy(xpath = "//a[normalize-space()='Bangles']")
 	WebElement Bangles;
@@ -10,7 +12,7 @@ public class BanglesPage {
 	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/section[1]/section[2]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]")
 	WebElement noProductFoundMsg;
 
-	@FindBy(xpath = "(//p[contains(text(),'Bangles')])") 
+	@FindBy(xpath = "(//p[contains(text(),'Bangles')])")
 	WebElement BanglesProductSection;
 
 	public static WebDriver driver;
@@ -57,5 +59,4 @@ public class BanglesPage {
 
 	}
 
-	
 }

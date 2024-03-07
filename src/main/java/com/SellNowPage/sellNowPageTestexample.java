@@ -21,52 +21,55 @@ public class sellNowPageTestexample {
 	@FindBy(xpath = "(//button[@class='sell_btn'][normalize-space()='Sell Now'])[1]  | //ul[@class='header_section']//div//button[@class='sell_btn'][normalize-space()='Sell Now'] ")
 	WebElement sellnowButton;
 
-	@FindBy(xpath = "//input[@name='ownerName']")
+	@FindBy(xpath = "//input[@id='fname']")
 	WebElement ownerName;
 
-	@FindBy(xpath = "//input[@name='pincode']")
+	@FindBy(xpath = "(//input[@id='lname'])[1]")
 	WebElement pincode;
 
-	@FindBy(xpath = "//select[@placeholder='Select Circle']")
+	@FindBy(xpath = "//p[normalize-space()='Begumpet']//input[@type='radio']")
 	WebElement circle;
 
-	@FindBy(xpath = "//textarea[@name='houseno']")
+	@FindBy(xpath = "//textarea[@formcontrolname='locality']")
 	WebElement HouseNoLandMark;
 
 	@FindBy(xpath = "//button[normalize-space()='Continue']")
 	WebElement continuebutton;
 
-	@FindBy(xpath = "//select[contains(@name,'type')]")
+	@FindBy(xpath = "(//select[@id='fname'])[1]")
 	WebElement ProductType;
 
-	@FindBy(xpath = "//select[@name='category']")
+	@FindBy(xpath = "(//select[@id='fname'])[2]")
 	WebElement category;
 
-	@FindBy(xpath = "//select[@name='carat']")
+	@FindBy(xpath = "//select[@formcontrolname='carat']")
 	WebElement carat;
 
-	@FindBy(xpath = "//input[@name='quantity']")
+	@FindBy(xpath = "//input[@formcontrolname='quantity']")
 	WebElement Quantity;
 
-	@FindBy(xpath = "//input[@name='gold_grams']")
+	@FindBy(xpath = "//input[@formcontrolname='gold_grams']")
 	WebElement GoldGrams;
 
-	@FindBy(xpath = "//input[@name='stone_grams']")
+	@FindBy(xpath = "//input[@formcontrolname='stone_grams']")
 	WebElement StoneGrams;
 
-	@FindBy(xpath = "//input[contains(@name,'yearUsed')]")
+	@FindBy(xpath = "//input[@formcontrolname='yearUsed']")
 	WebElement productYears;
 
 	@FindBy(xpath = "//input[@value='Full damage']")
 	WebElement productdamagedescriptionfulldamage;
 
-	@FindBy(xpath = "//textarea[@name='description']")
+	@FindBy(xpath = "//textarea[@id='lname']")
 	WebElement productDescription;
 
-	@FindBy(xpath = "//img[@class='cameraIcon']")
+	@FindBy(xpath = "//button[normalize-space()='Add Image']")
+	WebElement AddImgButton;
+
+	@FindBy(xpath = "//input[@id='myinputs']")
 	WebElement UploadImages;
 
-	@FindBy(xpath = "//button[normalize-space()='Continue']")
+	@FindBy(xpath = "//button[normalize-space()='Save']")
 	WebElement continuebutton2;
 
 	@FindBy(xpath = "//select[@placeholder='select type']")
@@ -97,9 +100,11 @@ public class sellNowPageTestexample {
 
 		Thread.sleep(4000);
 
-		Select select = new Select(circle);
+		// Select select = new Select(circle);
 		Thread.sleep(4000);
-		select.selectByVisibleText("Begumpet");
+		circle.click();
+
+		// select.selectByVisibleText("Begumpet");
 
 		Thread.sleep(4000);
 
@@ -118,7 +123,7 @@ public class sellNowPageTestexample {
 		select1.selectByVisibleText("Necklace");
 		Thread.sleep(4000);
 		Select select2 = new Select(carat);
-		select2.selectByVisibleText("22K");
+		select2.selectByIndex(1);
 
 		Thread.sleep(4000);
 		Quantity.sendKeys("1");
@@ -142,19 +147,13 @@ public class sellNowPageTestexample {
 		Thread.sleep(4000);
 
 		// Scroll the page to bring Upload Images button into view
-		js.executeScript("arguments[0].scrollIntoView(true);", UploadImages);
-		Thread.sleep(2000);
+		js.executeScript("arguments[0].scrollIntoView(true);", AddImgButton);
+		// Thread.sleep(2000);
 
-		UploadImages.click();
-
-		Thread.sleep(4000);
-
-		// Scroll the page to bring Continue button into view
-		js.executeScript("arguments[0].scrollIntoView(true);", continuebutton2);
-		Thread.sleep(2000);
+		AddImgButton.click();
 
 		// Wait for some time to ensure the file upload dialog appears
-		Thread.sleep(3000);
+		// Thread.sleep(3000);
 
 		// Specify the file path of the file to be uploaded
 		String filePath = "C:\\v_BuyAutomation\\download.jpg";

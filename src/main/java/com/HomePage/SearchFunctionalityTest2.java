@@ -7,13 +7,13 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SearchFunctionalityTest2 {
 
+	public static WebDriver driver;
+
 	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/section[1]/section[1]/nav[1]/ul[1]/li[2]/div[1]/input[1] | (//input[@placeholder='Search for jewellery'])[1]")
 	WebElement searchInput;
 
 	@FindBy(xpath = "(//img[@class='header_logo'])[1]")
 	WebElement logo;
-
-	public static WebDriver driver;
 
 	// Constructor to initialize PageFactory elements
 	public SearchFunctionalityTest2(WebDriver driver) {
@@ -22,7 +22,7 @@ public class SearchFunctionalityTest2 {
 
 	}
 
-	public void searchFunctionality() throws InterruptedException {
+	public void searchFunctionality(WebDriver driver) throws InterruptedException {
 		// Adding some wait to ensure the element is present
 
 		Thread.sleep(5000);
@@ -116,5 +116,7 @@ public class SearchFunctionalityTest2 {
 		logo.click();
 
 		System.out.println("Back to The Home Page All Product are display...!!!");
+
+		driver.close();
 	}
 }

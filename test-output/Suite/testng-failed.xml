@@ -3,12 +3,12 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="LoginPageTestmodel.LoginPageTest">
+      <class name="Com.Sprint2.test.SelectCityTest">
         <methods>
-          <include name="validatalogout"/>
           <include name="setup"/>
+          <include name="SelectCityVerify"/>
         </methods>
-      </class> <!-- LoginPageTestmodel.LoginPageTest -->
+      </class> <!-- Com.Sprint2.test.SelectCityTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

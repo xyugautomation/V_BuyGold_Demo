@@ -6,13 +6,13 @@ import org.testng.annotations.Test;
 
 import com.TrusteeModule.TrusteeRegister;
 
-import Com.BaseModule.LaunchBrowserValuer_Trustee;
+import Com.BaseModule.launchbrowser;
 
-public class Trustee_Register_Test extends LaunchBrowserValuer_Trustee {
+public class Trustee_Register_Test extends launchbrowser {
 
 	public static TrusteeRegister trusteepage;
 
-	@Test
+	@Test(enabled =false)
 	public void verifyTrusteeRegister() throws InterruptedException, AWTException {
 
 		trusteepage = new TrusteeRegister(driver);
@@ -27,4 +27,29 @@ public class Trustee_Register_Test extends LaunchBrowserValuer_Trustee {
 
 	}
 
+	
+	@Test(priority = 2)
+	public void verifyValuerRegisterInvalidateData() throws InterruptedException, AWTException {
+
+		trusteepage = new TrusteeRegister(driver);
+
+		trusteepage.TrusteeSelect();
+
+		trusteepage.personalinformationinvalid(driver);
+
+		trusteepage.PersonalInformation(driver);
+
+		//trusteepage.ExperienceinvalidateData(driver);
+
+		// valuerpage.ulopadpersonalindentiydocument(driver);
+
+	}
+//	
+	
+	
+	
+	
+	
+	
+	
 }

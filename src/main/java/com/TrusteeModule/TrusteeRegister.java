@@ -10,11 +10,13 @@ import java.time.Duration;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class TrusteeRegister {
 
@@ -59,6 +61,32 @@ public class TrusteeRegister {
 	@FindBy(xpath = "//button[normalize-space()='Save & Continue']")
 	public static WebElement SaveAndContinue;
 
+	
+	// personal information invalidate data xpath
+
+		@FindBy(xpath = "//div[@class='validationError ng-star-inserted']")
+		public static WebElement mobileNumberErrorMsg;
+
+		@FindBy(xpath = "  //div[normalize-space()='Please enter a valid email.']")
+		public static WebElement emailIDErrorMsg;
+
+		@FindBy(xpath = "//div[contains(text(),'Please enter a valid pin code.')]")
+		public static WebElement pincodeerrormsg;
+
+		@FindBy(xpath = "//div[normalize-space()='Day is required.']")
+		public static WebElement dayerrormsg;
+
+		@FindBy(xpath = "//app-valstepone[@class='ng-star-inserted']//p[@class='launch-carrea-paragraph'][normalize-space()='Become a Valuer with V-Buy Gold in 10 Minutes']")
+		public static WebElement valuerwebpageclick;
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	// Experience form xpath
 
 	@FindBy(xpath = "//select[@id='fname']")
@@ -201,4 +229,78 @@ public class TrusteeRegister {
 
 	}
 
+	
+	
+	
+	
+	
+	// negative test cases
+
+	public void personalinformationinvalid(WebDriver driver) throws InterruptedException {
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
+		; // Adjust the timeout as needed
+
+		wait.until(ExpectedConditions.visibilityOf(MobileNumber)).sendKeys("8698");
+
+		wait.until(ExpectedConditions.visibilityOf(EmailID)).sendKeys("Shiva");
+//
+		wait.until(ExpectedConditions.visibilityOf(PinCode)).sendKeys("50");
+
+		// Wait until the element is visible
+		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+        wait1.until(ExpectedConditions.visibilityOf(SelectDay));
+
+//        // Create Actions class object
+//        Actions actions = new Actions(driver);
+//
+//        // Double click on the element
+//        actions.doubleClick(selectDay).perform();
+		
+
+		//wait.until(ExpectedConditions.visibilityOf(valuerwebpageclick)).click();
+
+		Thread.sleep(2000);
+		// Scrolling to the end of the page
+		Long documentHeight = (Long) js
+				.executeScript("return Math.max(" + "document.body.scrollHeight, document.documentElement.scrollHeight,"
+						+ "document.body.offsetHeight, document.documentElement.offsetHeight,"
+						+ "document.body.clientHeight, document.documentElement.clientHeight);");
+		js.executeScript("window.scrollTo(0, arguments[0]);", documentHeight);
+
+		// SaveButtonBankPage.click();
+
+		Assert.assertTrue(mobileNumberErrorMsg.isDisplayed(), "Error message should be displayed for invalid Mobile");
+		System.out.println("Mobile Number Error Message Displayed: " + mobileNumberErrorMsg.isDisplayed());
+
+		Assert.assertTrue(emailIDErrorMsg.isDisplayed(), "Error message should be displayed for invalid Gamil");
+		System.out.println("Email ID Error Message Displayed: " + emailIDErrorMsg.isDisplayed());
+
+		Assert.assertTrue(pincodeerrormsg.isDisplayed(), "Error message should be displayed for invalid pincode");
+		System.out.println("Pincode Error Message Displayed: " + pincodeerrormsg.isDisplayed());
+
+		Assert.assertTrue(dayerrormsg.isDisplayed(), "Error message should be displayed for should not select Day");
+		System.out.println("Select day Error Message Displayed: " + dayerrormsg.isDisplayed());
+
+		MobileNumber.clear();
+		EmailID.clear();
+		PinCode.clear();
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

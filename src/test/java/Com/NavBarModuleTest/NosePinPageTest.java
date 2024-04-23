@@ -3,7 +3,7 @@ import org.testng.annotations.Test;
 
 import com.NavBarModule.NecklacePage;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 public class NosePinPageTest extends launchbrowser {
 
 	// Noise pin product is display or not

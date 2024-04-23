@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 public class LinkValidationTest  extends launchbrowser {
 	@Test
 	   public static void links() {

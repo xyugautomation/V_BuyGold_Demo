@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import com.HomePageImges.NosePinsImges;
 import com.LoginModulePage.LoginPage;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 
 public class NosePinsImgesPageTest extends launchbrowser {
 	@Test

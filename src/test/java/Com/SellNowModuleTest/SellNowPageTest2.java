@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import com.LoginModulePage.LoginPage;
 import com.SellNowPage.sellNowPageTestexample;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 
 public class SellNowPageTest2 extends launchbrowser{
 	@Test
@@ -21,13 +21,16 @@ public class SellNowPageTest2 extends launchbrowser{
 
 		sellnow.PersonalInformation();
 
-		//sellnow.FillYourJewelleryDetails();
+		sellnow.FillYourJewelleryDetails();
 
 		sellnow.fileupload();
 
-	
-		//sellnow.selectValuer();
+		sellnow.selectValuer();
 
 	}
+
+
+
+
 }
 

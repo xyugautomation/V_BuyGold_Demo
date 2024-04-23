@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import com.HomePage.SearchFunctionalityTest2;
 import com.LoginModulePage.LoginPage;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 public class SearchFunctionalitypageTest extends launchbrowser {
 	@Test
 	public void validateSearchFucntionality() throws InterruptedException {

@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import com.LoginModulePage.LoginPage;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 
 public class LoginPageTest extends launchbrowser {
 

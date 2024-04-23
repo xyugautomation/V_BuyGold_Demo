@@ -3,7 +3,7 @@ import org.testng.annotations.Test;
 
 import com.NavBarModule.ChainsPage;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 public class ChainsPageTest extends launchbrowser{
 	// chains product is display or not
 

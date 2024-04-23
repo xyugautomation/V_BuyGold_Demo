@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import com.HomePage.SelectCity;
 import com.LoginModulePage.LoginPage;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 
 public class SelectCityTest  extends launchbrowser {
 

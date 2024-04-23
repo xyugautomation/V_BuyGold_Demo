@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import com.FilterModulePage.filterPage;
 import com.LoginModulePage.LoginPage;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 
 public class FilterPageTest extends launchbrowser {
 
@@ -17,5 +17,4 @@ public class FilterPageTest extends launchbrowser {
 		filterPage FP = new filterPage(driver);
 		FP.Filterss(driver);
 	}
-
 }

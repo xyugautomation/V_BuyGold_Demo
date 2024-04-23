@@ -3,7 +3,7 @@ import org.testng.annotations.Test;
 
 import com.NavBarModule.PendantsPage;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 public class PendantsPageTest extends launchbrowser {
 	// Pendants product is display or not
 

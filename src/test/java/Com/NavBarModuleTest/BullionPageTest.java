@@ -3,7 +3,7 @@ import org.testng.annotations.Test;
 
 import com.NavBarModule.BullionPage;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 public class BullionPageTest  extends launchbrowser{
 	// Bullion product is display or not
 

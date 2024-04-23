@@ -1,4 +1,4 @@
-package com.utility;
+package com.utilityModule;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;

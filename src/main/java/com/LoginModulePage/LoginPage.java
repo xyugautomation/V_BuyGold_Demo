@@ -53,6 +53,7 @@ public class LoginPage {
 
 	public void loginpagewebelement(WebDriver driver) {
 		LoginButton.click();
+		
 
 		fluentWaitForElementToBeClickable(driver, continuewithphone).click();
 		fluentWaitForElementToBeVisible(driver, PhoneNumber).sendKeys("6305349069");
@@ -69,8 +70,7 @@ public class LoginPage {
 		fluentWaitForElementToBeClickable(driver, Logout).click();
 		Thread.sleep(10000);
 		fluentWaitForElementToBeClickable(driver, YesButton).click();
-		
-		
+
 		driver.close();
 
 	}
@@ -124,17 +124,16 @@ public class LoginPage {
 			System.out.println("Test failed: Continue button remains disabled with valid input.");
 		}
 
-		
 		driver.close();
-		
+
 	}
 
-	  @AfterMethod
-	    public void tearDown() {
-	        // Close the WebDriver instance after each test method
-	        if (driver != null) {
-	            driver.quit();
-	        }
-	    }
+	@AfterMethod
+	public void tearDown() {
+		// Close the WebDriver instance after each test method
+		if (driver != null) {
+			driver.quit();
+		}
+	}
 
 }

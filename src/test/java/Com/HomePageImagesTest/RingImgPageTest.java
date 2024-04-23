@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import com.HomePageImges.RingImage;
 import com.LoginModulePage.LoginPage;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 
 public class RingImgPageTest extends launchbrowser {
 

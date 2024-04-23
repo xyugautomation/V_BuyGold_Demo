@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import com.LoginModulePage.LoginPage;
 import com.NotificationPage.notificationPage;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 
 public class NotificationpageTest extends launchbrowser {
 	

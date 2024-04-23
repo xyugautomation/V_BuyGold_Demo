@@ -3,12 +3,18 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Com.Sprint2.test.SelectCityTest">
+      <class name="Com.TrusteeModuleTest.Trustee_Register_Test">
         <methods>
           <include name="setup"/>
-          <include name="SelectCityVerify"/>
+          <include name="verifyTrusteeRegister"/>
         </methods>
-      </class> <!-- Com.Sprint2.test.SelectCityTest -->
+      </class> <!-- Com.TrusteeModuleTest.Trustee_Register_Test -->
+      <class name="Com.ValuerModuleTest.valuer_Register_Test">
+        <methods>
+          <include name="VerifyValuerRegister"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- Com.ValuerModuleTest.valuer_Register_Test -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

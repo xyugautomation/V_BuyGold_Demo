@@ -2,7 +2,7 @@ package Com.LoginPageTest;
 
 import org.testng.annotations.Test;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 
 public class CrossBrowserTesting extends launchbrowser{
 	  @Test

@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import com.HomePageImges.BraceletsImges;
 import com.LoginModulePage.LoginPage;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 
 public class BraceletsImgesPageTest extends launchbrowser {
 	@Test

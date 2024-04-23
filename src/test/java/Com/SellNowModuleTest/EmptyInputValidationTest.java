@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import com.LoginModulePage.LoginPage;
 import com.SellNowPage.EmptyInputValidation;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 
 public class EmptyInputValidationTest extends launchbrowser {
 

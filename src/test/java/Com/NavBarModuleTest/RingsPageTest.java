@@ -3,7 +3,7 @@ import org.testng.annotations.Test;
 
 import com.NavBarModule.RingsPage;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 public class RingsPageTest extends launchbrowser {
 	// Bracelets product is display or not
 

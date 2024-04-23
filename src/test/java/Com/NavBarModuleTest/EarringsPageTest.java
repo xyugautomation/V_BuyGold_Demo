@@ -1,8 +1,10 @@
 package Com.NavBarModuleTest;
 
 import org.testng.annotations.Test;
-import Base.launchbrowser;
+
 import com.NavBarModule.EarringsPage;
+
+import Com.BaseModule.launchbrowser;
 
 public class EarringsPageTest extends launchbrowser {
 	// Bracelets product is display or not

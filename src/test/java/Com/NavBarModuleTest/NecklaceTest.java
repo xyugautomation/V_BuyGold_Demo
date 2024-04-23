@@ -3,7 +3,7 @@ import org.testng.annotations.Test;
 
 import com.NavBarModule.NosePinsPage;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 public class NecklaceTest   extends launchbrowser{
 	// necklace product is display or not
 

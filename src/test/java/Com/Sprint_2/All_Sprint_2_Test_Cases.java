@@ -343,7 +343,6 @@ public class All_Sprint_2_Test_Cases {
 
 	@Test(priority = 22)
 	public void RingsProductclickalble() throws InterruptedException {
-
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://52.77.24.76/");
@@ -432,9 +431,7 @@ public class All_Sprint_2_Test_Cases {
 		System.out.println("<<------...1) Nose Pins image process is Started...------->>");
 		System.out.println();
 		NosePinsImges img = new NosePinsImges(driver);
-
 		img.imageThreeclick(driver);
-
 		System.out.println("<<------...Nose Pins image process is completed...------->>");
 		System.out.println();
 		driver.close();

@@ -3,17 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Com.Sprint_2.All_Sprint_2_Test_Cases">
+      <class name="Com.ValuerModuleTest.valuer_Register_Test">
         <methods>
-          <include name="NecklaceProductclickalble"/>
-          <include name="EarringsProductclickalble"/>
-          <include name="VerifyRingImgDetails"/>
-          <include name="PendantsPageProductclickalble"/>
-          <include name="VerifyNosePinsImgDetails"/>
-          <include name="NosePinsPageProductclickalble"/>
-          <include name="driverclosed"/>
+          <include name="VerifyValuerRegister"/>
+          <include name="verifyValuerRegisterInvalidateData"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- Com.Sprint_2.All_Sprint_2_Test_Cases -->
+      </class> <!-- Com.ValuerModuleTest.valuer_Register_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

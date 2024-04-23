@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import com.NavBarModule.BanglesPage;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 
 public class BanglesPageTest extends launchbrowser {
 	// Bracelets product is display or not

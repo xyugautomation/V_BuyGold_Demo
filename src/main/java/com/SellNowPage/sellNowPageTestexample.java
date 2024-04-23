@@ -5,7 +5,6 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -63,21 +62,28 @@ public class sellNowPageTestexample {
 	@FindBy(xpath = "//textarea[@id='lname']")
 	WebElement productDescription;
 
-	@FindBy(xpath = "//button[normalize-space()='Add Image']")
-	WebElement AddImgButton;
-
-	@FindBy(xpath = "//input[@id='myinputs']")
-	WebElement UploadImages;
+	@FindBy(xpath = "//div[@class='col-md-4' or @class='inputWrapper']")
+	WebElement ChooseFile;
 
 	@FindBy(xpath = "//button[normalize-space()='Save']")
 	WebElement continuebutton2;
 
-	@FindBy(xpath = "//select[@placeholder='select type']")
-	WebElement selectvaluertype;
+	@FindBy(xpath = "//button[normalize-space()='Select Valuer']")
+	WebElement selectvaluer;
 
-	@FindBy(xpath = "//button[normalize-space()='Submit']")
-	WebElement submitbutton;
+	@FindBy(xpath = "//body//app-root//div[@class='inputforms']//div//div[10]")
+	WebElement Shiv_valuerclick;
 
+	@FindBy(xpath="//button[normalize-space()='Ok']")
+	WebElement AcceptOkButton;
+	
+	@FindBy(xpath="//button[normalize-space()='Save']")
+	WebElement saveButton;
+	
+	@FindBy(xpath="//button[normalize-space()='Go To Dashboard']")
+	WebElement GoToDashBoard;
+	
+	
 	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/section[1]/section[1]/nav[1]/ul[1]/li[1] ")
 	WebElement logo;
 
@@ -88,28 +94,19 @@ public class sellNowPageTestexample {
 	}
 
 	public void PersonalInformation() throws InterruptedException {
-		Thread.sleep(8000);
-		// JavascriptExecutor executor = (JavascriptExecutor) driver;
-		// executor.executeScript("arguments[0].click();", sellnowButton);
-
+		Thread.sleep(4000);
 		sellnowButton.click();
 		Thread.sleep(5000);
 		ownerName.sendKeys("Shiv");
 		Thread.sleep(5000);
 		pincode.sendKeys("500016");
-
 		Thread.sleep(4000);
-
 		// Select select = new Select(circle);
 		Thread.sleep(4000);
 		circle.click();
-
 		// select.selectByVisibleText("Begumpet");
-
 		Thread.sleep(4000);
-
 		HouseNoLandMark.sendKeys("Beside richi bekari");
-
 		continuebutton.click();
 
 	}
@@ -124,7 +121,6 @@ public class sellNowPageTestexample {
 		Thread.sleep(4000);
 		Select select2 = new Select(carat);
 		select2.selectByIndex(1);
-
 		Thread.sleep(4000);
 		Quantity.sendKeys("1");
 		Thread.sleep(4000);
@@ -132,10 +128,8 @@ public class sellNowPageTestexample {
 		Thread.sleep(4000);
 		StoneGrams.sendKeys("1");
 		Thread.sleep(4000);
-
 		productYears.sendKeys("1");
 		Thread.sleep(4000);
-
 		productdamagedescriptionfulldamage.click();
 		Thread.sleep(4000);
 		productDescription.sendKeys("this product is fullydamage");
@@ -144,58 +138,46 @@ public class sellNowPageTestexample {
 
 	public void fileupload() throws InterruptedException, AWTException {
 
-		Thread.sleep(4000);
-
-		// Scroll the page to bring Upload Images button into view
-		js.executeScript("arguments[0].scrollIntoView(true);", AddImgButton);
-		// Thread.sleep(2000);
-
-		AddImgButton.click();
-
-		// Wait for some time to ensure the file upload dialog appears
-		// Thread.sleep(3000);
-
-		// Specify the file path of the file to be uploaded
+		// Get the document height
+		Long documentHeight = (Long) js
+				.executeScript("return Math.max(" + "document.body.scrollHeight, document.documentElement.scrollHeight,"
+						+ "document.body.offsetHeight, document.documentElement.offsetHeight,"
+						+ "document.body.clientHeight, document.documentElement.clientHeight);");
+		// Assuming js is your JavaScriptExecutor instance
+		js.executeScript("window.scrollTo(0, arguments[0]);", documentHeight);
+		Thread.sleep(5000);
+		ChooseFile.click();
+		Thread.sleep(2000);
+		// Specify the file path
 		String filePath = "C:\\v_BuyAutomation\\download.jpg";
-
-		// Copy the file path to the clipboard
-		StringSelection stringSelection = new StringSelection(filePath);
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
-
-		// Create Robot class instance
+		// Use Robot class to interact with the system-level file dialog
 		Robot robot = new Robot();
-
-		// Paste the file path from clipboard using CTRL+V
+		// Copy the file path to clipboard
+		StringSelection stringSelection = new StringSelection(filePath); 
+		
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+		// Paste the file path into the file dialog and press Enter
 		robot.keyPress(KeyEvent.VK_CONTROL);
 		robot.keyPress(KeyEvent.VK_V);
 		robot.keyRelease(KeyEvent.VK_V);
 		robot.keyRelease(KeyEvent.VK_CONTROL);
-
-		// Press Enter to confirm the file upload
+		robot.delay(1000); // Delay to ensure the path is pasted
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 
-		Thread.sleep(3000);
-
-		continuebutton2.click();
 	}
 
 	public void selectValuer() throws InterruptedException {
-		Select select = new Select(selectvaluertype);
+
+		selectvaluer.click();
 		Thread.sleep(4000);
-		select.selectByVisibleText("Kalyan jwellers");
+		Shiv_valuerclick.click();
 		Thread.sleep(4000);
-
-		submitbutton.click();
-
-		if (driver != null) {
-
-			Thread.sleep(6000);
-
-			driver.navigate().back();
-		} else {
-			System.out.println("WebDriver is null. Cannot navigate back.");
-		}
+		AcceptOkButton.click();
+		Thread.sleep(4000);
+		saveButton.click();
+		Thread.sleep(4000);
+		GoToDashBoard.click();
 
 	}
 
@@ -216,11 +198,7 @@ public class sellNowPageTestexample {
 
 		// Validate if the error message is displayed correctly
 		Assert.assertEquals(errorMessageText, "Your Name is required", "Error message not displayed or incorrect");
-
 	}
 
-	// p[normalize-space()='Circle is required']
-
-	// p[normalize-space()='Landmark is required']
 
 }

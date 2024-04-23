@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import com.PageNavigation.PageNavigation;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 
 public class PageNavigationTest extends launchbrowser {
 

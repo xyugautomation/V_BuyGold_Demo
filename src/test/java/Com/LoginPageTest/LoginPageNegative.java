@@ -3,7 +3,7 @@ import org.testng.annotations.Test;
 
 import com.LoginModulePage.LoginPage;
 
-import Base.launchbrowser;
+import Com.BaseModule.launchbrowser;
 public class LoginPageNegative extends launchbrowser {
 	@Test
 	public void Invalidata() throws InterruptedException {

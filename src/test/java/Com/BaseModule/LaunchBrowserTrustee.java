@@ -1,17 +1,13 @@
-package Base;
+package Com.BaseModule;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
-
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class launchbrowser {
-	
+public class LaunchBrowserTrustee {
+
 	public static WebDriver driver;
 
 	@BeforeTest
@@ -24,13 +20,7 @@ public class launchbrowser {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		// Open a website
-		driver.get("http://52.77.24.76/");
+		driver.get("http://stg-trustee.vbuygold.com/");
 
 	}
-
-
-
-
-
-
 }

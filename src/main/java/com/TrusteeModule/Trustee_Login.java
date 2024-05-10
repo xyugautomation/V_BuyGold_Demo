@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class Trustee_Login {
 	public static WebDriver driver;
@@ -43,14 +44,27 @@ public class Trustee_Login {
 
 	@FindBy(xpath = "//button[normalize-space()='Yes']")
 	public static WebElement YesButton;
+	
+	@FindBy(xpath = "//p[contains(text(),'Your contact number is never shared with external ')]")
+	public static WebElement loginpagecontenttext;
 
+	@FindBy(xpath = "//div[contains(text(),'Phone is invalid')]")
+	public static WebElement invalidText;
+
+	@FindBy(xpath = "//div[contains(text(),'Phone is required')]")
+	public static WebElement phoneisrequiredText;
+
+	@FindBy(xpath = "//img[@src='../../../assets/v-buy-gold-logo.png']")
+	public static WebElement logo;
+
+	
 	public Trustee_Login(WebDriver driver) {
 
 		PageFactory.initElements(driver, this);
 		js = (JavascriptExecutor) driver;
 	}
 
-	public static void TrusteeMobileNumber(WebDriver driver) throws InterruptedException {
+	public void TrusteeMobileNumber(WebDriver driver) throws InterruptedException {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
@@ -77,4 +91,47 @@ public class Trustee_Login {
 
 	}
 
+	public void testInvalidLogin() throws InterruptedException {
+		Thread.sleep(2000);
+		// Enter invalid credentials
+		EnterMobileNumber.sendKeys("858558");
+		Thread.sleep(2000);
+		clickbutton.click();
+		Thread.sleep(2000);
+		EnterMobileNumber.clear();
+
+		if (invalidText.isDisplayed()) {
+
+			Assert.assertTrue(invalidText.isDisplayed(), "Phone is required text is not displayed.");
+		} else if (invalidText.isDisplayed()) {
+
+			Assert.assertTrue(invalidText.isDisplayed(), "Invalid phone text is not displayed.");
+		} else {
+			Assert.fail("Expected error message not displayed.");
+		}
+	}
+
+	public void EmptyMobileNumber() throws InterruptedException {
+		Thread.sleep(2000);
+		clickbutton.click();
+		Assert.assertTrue(phoneisrequiredText.isDisplayed(), "Phone is required text is not displayed.");
+
+	}
+
+	public boolean isPhoneNumberText() throws InterruptedException {
+		Thread.sleep(2000);
+		return loginpagecontenttext.isDisplayed();
+	}
+
+	public boolean isLogoDisplayed() throws InterruptedException {
+		Thread.sleep(2000);
+		return logo.isDisplayed();
+	}
+
+	public boolean isButtonClickable() throws InterruptedException {
+		Thread.sleep(2000);
+		return clickbutton.isEnabled();
+	}
+
+	
 }

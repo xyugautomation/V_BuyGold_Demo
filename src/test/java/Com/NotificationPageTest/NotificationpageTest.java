@@ -8,9 +8,8 @@ import com.NotificationPage.notificationPage;
 import Com.BaseModule.launchbrowser;
 
 public class NotificationpageTest extends launchbrowser {
-	
-	
-	@Test(priority =3)
+
+	@Test(priority = 3)
 	public void VerifyNotificationPage() throws InterruptedException {
 
 //		LoginPage LP = new LoginPage(driver);
@@ -21,20 +20,5 @@ public class NotificationpageTest extends launchbrowser {
 		NP.verifynotificationbutton(driver);
 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

@@ -11,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class Valuer_Login {
 
@@ -56,6 +57,12 @@ public class Valuer_Login {
 	@FindBy(xpath = "//button[@class='logout']")
 	public static WebElement logoutbutton;
 
+	@FindBy(xpath = "//div[contains(text(),'Phone is invalid')]")
+	public static WebElement invalidText;
+
+	@FindBy(xpath = "//div[contains(text(),'Phone is required')]")
+	public static WebElement phoneisrequiredText;
+
 	@FindBy(xpath = "//button[normalize-space()='Yes']")
 	public static WebElement YesButton;
 
@@ -65,7 +72,23 @@ public class Valuer_Login {
 		js = (JavascriptExecutor) driver;
 	}
 
-	public static void valuerMobileNumber(WebDriver driver) throws InterruptedException {
+	public void ValuerLoginWithMobileNumber(WebDriver driver) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+		wait.until(ExpectedConditions.visibilityOf(EnterMobileNumber)).sendKeys("8989895689");
+		wait.until(ExpectedConditions.visibilityOf(clickbutton)).click();
+		wait.until(ExpectedConditions.visibilityOf(A)).sendKeys("1");
+
+		wait.until(ExpectedConditions.visibilityOf(B)).sendKeys("1");
+		wait.until(ExpectedConditions.visibilityOf(C)).sendKeys("1");
+		wait.until(ExpectedConditions.visibilityOf(D)).sendKeys("1");
+		wait.until(ExpectedConditions.visibilityOf(E)).sendKeys("1");
+
+		wait.until(ExpectedConditions.visibilityOf(F)).sendKeys("1");
+
+	}
+
+	public void valuerMobileNumber(WebDriver driver) throws InterruptedException {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
@@ -220,15 +243,13 @@ public class Valuer_Login {
 
 		wait.until(ExpectedConditions.visibilityOf(F)).sendKeys("1");
 
-		// Find the success message element
 		WebElement successMessage1 = null;
 		try {
 			successMessage1 = driver.findElement(By.xpath("//p[normalize-space()='SUCCESS']"));
 		} catch (org.openqa.selenium.NoSuchElementException e) {
-			// Success message not found
+
 		}
 
-		// Check if the success message is displayed
 		if (successMessage1 != null && successMessage1.isDisplayed()) {
 			System.out.println("Success message is displayed: " + successMessage1.getText());
 		} else {
@@ -242,4 +263,47 @@ public class Valuer_Login {
 		// driver.close();
 
 	}
+
+	public void testInvalidLogin() throws InterruptedException {
+		Thread.sleep(2000);
+		// Enter invalid credentials
+		EnterMobileNumber.sendKeys("858558");
+		Thread.sleep(2000);
+		clickbutton.click();
+		Thread.sleep(2000);
+		EnterMobileNumber.clear();
+
+		if (invalidText.isDisplayed()) {
+
+			Assert.assertTrue(invalidText.isDisplayed(), "Phone is required text is not displayed.");
+		} else if (invalidText.isDisplayed()) {
+
+			Assert.assertTrue(invalidText.isDisplayed(), "Invalid phone text is not displayed.");
+		} else {
+			Assert.fail("Expected error message not displayed.");
+		}
+	}
+
+	public void EmptyMobileNumber() throws InterruptedException {
+		Thread.sleep(2000);
+		clickbutton.click();
+		Assert.assertTrue(phoneisrequiredText.isDisplayed(), "Phone is required text is not displayed.");
+
+	}
+
+	public boolean isPhoneNumberText() throws InterruptedException {
+		Thread.sleep(2000);
+		return loginpagecontenttext.isDisplayed();
+	}
+
+	public boolean isLogoDisplayed() throws InterruptedException {
+		Thread.sleep(2000);
+		return logo.isDisplayed();
+	}
+
+	public boolean isButtonClickable() throws InterruptedException {
+		Thread.sleep(2000);
+		return clickbutton.isEnabled();
+	}
+
 }

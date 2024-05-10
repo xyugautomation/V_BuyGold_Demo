@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Com.TrusteeModuleTest.Trustee_Register_Test">
+      <class name="Com.TrusteeModuleTest.Trustee_Login_Test">
         <methods>
+          <include name="VerifyLoginWithValidateData"/>
           <include name="setup"/>
-          <include name="verifyValuerRegisterInvalidateData"/>
         </methods>
-      </class> <!-- Com.TrusteeModuleTest.Trustee_Register_Test -->
+      </class> <!-- Com.TrusteeModuleTest.Trustee_Login_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

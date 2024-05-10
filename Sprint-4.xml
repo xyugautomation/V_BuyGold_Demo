@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="Test">
+		<classes>
+
+
+			<class name="Com.TrusteeModuleTest.Trustee_Login_Test" />
+
+			<class name="Com.ValuerModuleTest.Valuer_Login_PageTest" />
+			<class name="Com.ValuerModuleTest.DashBoardPageTest" />
+			<class name="Com.ValuerModuleTest.PendingProductsPageTest" />
+			<class name="Com.ValuerModuleTest.AcceptedproductsPageTest" />
+			<class name="Com.ValuerModuleTest.RejectedProductsPageTest" />
+			<class name="Com.ValuerModuleTest.RaiseTicketPageTest" />
+			<class name="Com.ValuerModuleTest.TicketStatusPageTest" />
+			<class name="Com.ValuerModuleTest.CommissionPageTest" />
+
+
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

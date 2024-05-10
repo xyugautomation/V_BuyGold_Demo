@@ -299,7 +299,7 @@ public class ValuerRegister {
 
 	}
 
-	public static void OnBoardingDashBoard(WebDriver driver) throws InterruptedException {
+	public void OnBoardingDashBoard(WebDriver driver) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		; // Adjust the timeout as needed
 		Thread.sleep(2000);

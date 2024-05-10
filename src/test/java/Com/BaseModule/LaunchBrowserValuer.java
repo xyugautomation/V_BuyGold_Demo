@@ -2,7 +2,7 @@ package Com.BaseModule;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeSuite;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -10,7 +10,7 @@ public class LaunchBrowserValuer {
 
 	public static WebDriver driver;
 
-	@BeforeTest
+	@BeforeSuite
 	public static void setup() {
 
 		// Setup ChromeDriver binary using WebDriverManager
@@ -23,13 +23,5 @@ public class LaunchBrowserValuer {
 		driver.get("http://52.77.24.76:81/login");
 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

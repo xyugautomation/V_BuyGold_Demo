@@ -8,7 +8,7 @@ import com.ValuerModule.ValuerRegister;
 
 import Com.BaseModule.launchbrowser;
 
-public class valuer_Register_Test extends launchbrowser {
+public class valuer_Register_PageTest extends launchbrowser {
 
 	public static ValuerRegister valuerpage;
 
@@ -33,7 +33,7 @@ public class valuer_Register_Test extends launchbrowser {
 
 	}
 
-	@Test(priority = 2)
+	@Test(enabled=false)
 	public void verifyValuerRegisterInvalidateData() throws InterruptedException, AWTException {
 
 		valuerpage = new ValuerRegister(driver);

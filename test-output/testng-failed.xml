@@ -1,14 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Com.TrusteeModuleTest.Trustee_Register_Test">
+      <class name="Com.ValuerModuleTest.TicketStatusPageTest">
         <methods>
+          <include name="testNoDataFoundVisibility"/>
           <include name="setup"/>
-          <include name="verifyValuerRegisterInvalidateData"/>
+          <include name="testSearchButtonVisibility"/>
+          <include name="testPreviousAndNextVisibility"/>
+          <include name="testTableTextVisibility"/>
+          <include name="testRaisedTicketsTextVisibility"/>
         </methods>
-      </class> <!-- Com.TrusteeModuleTest.Trustee_Register_Test -->
+      </class> <!-- Com.ValuerModuleTest.TicketStatusPageTest -->
+      <class name="Com.ValuerModuleTest.CommissionPageTest">
+        <methods>
+          <include name="VerifyCommissionEarnedDsipaly"/>
+          <include name="setup"/>
+          <include name="Verifypreviousandnextbuttons"/>
+          <include name="AllTextDisplay"/>
+          <include name="NoProductDisplay"/>
+        </methods>
+      </class> <!-- Com.ValuerModuleTest.CommissionPageTest -->
+      <class name="Com.ValuerModuleTest.RaiseTicketPageTest">
+        <methods>
+          <include name="ReportanIssueDisplay"/>
+          <include name="VerifyLessThen30CharErrormsgdisplay"/>
+          <include name="setup"/>
+          <include name="submitbuttonenabled30char"/>
+          <include name="TextBoxDisplay"/>
+          <include name="tearDown"/>
+          <include name="SubmitbuttonDisplay"/>
+        </methods>
+      </class> <!-- Com.ValuerModuleTest.RaiseTicketPageTest -->
+      <class name="Com.ValuerModuleTest.RejectedProductsPageTest">
+        <methods>
+          <include name="testNoProductFoundVisibility"/>
+          <include name="setup"/>
+          <include name="testTillNowRejectedProductsTextVisibility"/>
+          <include name="testSerchButtonVisibility"/>
+          <include name="testPreviousAndNextVisibility"/>
+          <include name="testTableTextVisibility"/>
+          <include name="testsearchButtonEnterData"/>
+        </methods>
+      </class> <!-- Com.ValuerModuleTest.RejectedProductsPageTest -->
+      <class name="Com.ValuerModuleTest.AcceptedproductsPageTest">
+        <methods>
+          <include name="Verifypreviousandnextbuttonsaredisplayed"/>
+          <include name="Verifysearchbuttonisdisplayed"/>
+          <include name="setup"/>
+          <include name="verifyTableTextDsiplay"/>
+        </methods>
+      </class> <!-- Com.ValuerModuleTest.AcceptedproductsPageTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

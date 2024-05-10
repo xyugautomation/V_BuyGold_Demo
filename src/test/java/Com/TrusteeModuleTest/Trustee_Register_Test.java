@@ -12,7 +12,7 @@ public class Trustee_Register_Test extends launchbrowser {
 
 	public static TrusteeRegister trusteepage;
 
-	@Test(enabled =false)
+	@Test(enabled = false)
 	public void verifyTrusteeRegister() throws InterruptedException, AWTException {
 
 		trusteepage = new TrusteeRegister(driver);
@@ -27,7 +27,6 @@ public class Trustee_Register_Test extends launchbrowser {
 
 	}
 
-	
 	@Test(priority = 2)
 	public void verifyValuerRegisterInvalidateData() throws InterruptedException, AWTException {
 
@@ -39,17 +38,10 @@ public class Trustee_Register_Test extends launchbrowser {
 
 		trusteepage.PersonalInformation(driver);
 
-		//trusteepage.ExperienceinvalidateData(driver);
+		// trusteepage.ExperienceinvalidateData(driver);
 
 		// valuerpage.ulopadpersonalindentiydocument(driver);
 
 	}
-//	
-	
-	
-	
-	
-	
-	
-	
+
 }

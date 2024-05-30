@@ -190,7 +190,7 @@ public class TrusteeRegister {
 		wait.until(ExpectedConditions.visibilityOf(SaveButton)).click();
 	}
 
-	public static void BankDetails(WebDriver driver) throws InterruptedException, AWTException {
+	public void BankDetails(WebDriver driver) throws InterruptedException, AWTException {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		; // Adjust the timeout as needed

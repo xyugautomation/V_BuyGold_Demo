@@ -83,11 +83,11 @@ public class Trustee_Login {
 
 		wait.until(ExpectedConditions.visibilityOf(F)).sendKeys("1");
 
-		wait.until(ExpectedConditions.visibilityOf(logoutbutton)).click();
-
-		wait.until(ExpectedConditions.visibilityOf(YesButton)).click();
-
-		driver.close();
+//		wait.until(ExpectedConditions.visibilityOf(logoutbutton)).click();
+//
+//		wait.until(ExpectedConditions.visibilityOf(YesButton)).click();
+//
+//		driver.close();
 
 	}
 

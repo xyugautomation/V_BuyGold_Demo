@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="Com.TrusteeModuleTest.DashboardPageTest" />
+			<class
+				name="Com.TrusteeModuleTest.SellerStatus_ApprovalPendingPageTest" />
+			<class
+				name="Com.TrusteeModuleTest.SellerStatus_PendingGoldDepositsPageTest" />
+			<class
+				name="Com.TrusteeModuleTest.SellerStatus_SellerPayoutsPageTest" />
+
+			<class
+				name="Com.TrusteeModuleTest.BuyerStatus_PendingPickupAndDepositPageTest" />
+			<class
+				name="Com.TrusteeModuleTest.BuyerStatus_DeliveredProductsPageTest" />
+			<class name="Com.TrusteeModuleTest.RaiseTicketPageTest" />
+			<class name="Com.TrusteeModuleTest.TicketStatusPageTest" />
+			<class name="Com.TrusteeModuleTest.CommissionPageTest" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

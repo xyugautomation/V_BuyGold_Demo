@@ -19,9 +19,9 @@ public class Trustee_Register_Test extends launchbrowser {
 
 		trusteepage.TrusteeSelect();
 
-		trusteepage.PersonalInformation(driver);
+		TrusteeRegister.PersonalInformation(driver);
 
-		trusteepage.Experience(driver);
+		TrusteeRegister.Experience(driver);
 
 		trusteepage.BankDetails(driver);
 

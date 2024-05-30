@@ -6,10 +6,6 @@
 
 			<class name="LoginPageTestmodel.LoginPageTest" />
 
-
-
-
-
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

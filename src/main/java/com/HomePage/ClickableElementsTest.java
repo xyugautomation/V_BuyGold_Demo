@@ -28,8 +28,8 @@ public class ClickableElementsTest {
 	@Test
 	public void testClickableElements() {
 		// Find all clickable elements on the page
-
-		java.util.List<WebElement> clickableElements = driver.findElements(By.xpath("//a | //button"));
+		java.util.List<WebElement> clickableElements = driver.findElements(By.xpath("//a | //button")); 
+		
 
 		// Loop through each clickable element and perform the action
 		for (WebElement element : clickableElements) {

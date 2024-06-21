@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class NecklaceImges {
 
-
 	// 2).............. Necklace Image Xpath start.............//
 
 	@FindBy(xpath = "//a[normalize-space()='Necklace']")
@@ -82,91 +81,79 @@ public class NecklaceImges {
 	WebElement DateNecklace;
 
 	// .............. Necklace Image Xpath End.............//
-	
-	
+
 	// images click class constructor
-		public NecklaceImges(WebDriver driver) {
+	public NecklaceImges(WebDriver driver) {
 
-			PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver, this);
 
-		}
-	
-	
-	
-	
-	
-	
+	}
+
 	// 2: --> Necklace image click sent to the price and submit button click
-		public void imageTwoclick(WebDriver driver) throws InterruptedException {
-			Thread.sleep(5000);
-			NavBarNecklace.click();
+	public void imageTwoclick(WebDriver driver) throws InterruptedException {
+		Thread.sleep(5000);
+		NavBarNecklace.click();
 
-			Thread.sleep(9000);
+		Thread.sleep(9000);
 
-			NecklaceImg.click();
+		NecklaceImg.click();
 
-			Thread.sleep(5000);
+		Thread.sleep(5000);
 
-			// Find elements containing product details
+		// Find elements containing product details
 
-			String ProductDetailss = ProductDetailsNecklace.getText();
+		String ProductDetailss = ProductDetailsNecklace.getText();
 
-			String Necklacename = nameElementNecklace.getText();
+		String Necklacename = nameElementNecklace.getText();
 
-			String priceofelement = priceElementNecklace.getText();
+		String priceofelement = priceElementNecklace.getText();
 
-			String carat = caratElementNecklace.getText();
+		String carat = caratElementNecklace.getText();
 
-			String grossGrams = grossGramsElementNecklace.getText();
+		String grossGrams = grossGramsElementNecklace.getText();
 
-			String goldGrams = goldGramsElementNecklace.getText();
+		String goldGrams = goldGramsElementNecklace.getText();
 
-			String stoneGrams = stoneGramsElementNecklace.getText();
+		String stoneGrams = stoneGramsElementNecklace.getText();
 
-			String damageDescription = damageDescriptionElementNecklace.getText();
+		String damageDescription = damageDescriptionElementNecklace.getText();
 
-			Thread.sleep(2000);
+		Thread.sleep(2000);
 
-			// Seller Details
+		// Seller Details
 
-			String SellerName = SellerNameNecklace.getText();
-			String SellerYears = YearsNecklace.getText();
-			String Locations = LocationNecklace.getText();
-			String Date = DateNecklace.getText();
+		String SellerName = SellerNameNecklace.getText();
+		String SellerYears = YearsNecklace.getText();
+		String Locations = LocationNecklace.getText();
+		String Date = DateNecklace.getText();
 
-			// Output the extracted details
-			System.out.println("Product Details:" + ProductDetailss);
-			System.out.println("Name: " + Necklacename);
-			System.out.println("Price: " + priceofelement);
-			System.out.println("Carat: " + carat);
-			System.out.println("Gross grams: " + grossGrams);
-			System.out.println("Gold grams: " + goldGrams);
-			System.out.println("Stone grams: " + stoneGrams);
-			System.out.println("Damage Description: " + damageDescription);
+		// Output the extracted details
+		System.out.println("Product Details:" + ProductDetailss);
+		System.out.println("Name: " + Necklacename);
+		System.out.println("Price: " + priceofelement);
+		System.out.println("Carat: " + carat);
+		System.out.println("Gross grams: " + grossGrams);
+		System.out.println("Gold grams: " + goldGrams);
+		System.out.println("Stone grams: " + stoneGrams);
+		System.out.println("Damage Description: " + damageDescription);
 
-			System.out.println("------------------------------------------------");
+		System.out.println("------------------------------------------------");
 
-			System.out.println("Output of the seller Details");
-			System.out.println("Seller Name" + SellerName);
-			System.out.println("Seller years" + SellerYears);
-			System.out.println("Seller Location" + Locations);
-			System.out.println("Seller Date" + Date);
+		System.out.println("Output of the seller Details");
+		System.out.println("Seller Name" + SellerName);
+		System.out.println("Seller years" + SellerYears);
+		System.out.println("Seller Location" + Locations);
+		System.out.println("Seller Date" + Date);
 
-			navigateBack(driver);
+		navigateBack(driver);
 
-		}
-	
-	
-	
-	
-		public static void navigateBack(WebDriver driver) throws InterruptedException {
+	}
 
-			Thread.sleep(5000);
+	public static void navigateBack(WebDriver driver) throws InterruptedException {
 
-			driver.navigate().back();
-		}
-	
-	
-	
-	
+		Thread.sleep(5000);
+
+		driver.navigate().back();
+	}
+
 }

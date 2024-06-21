@@ -1,23 +1,27 @@
 package Com.HomePageTest;
-import org.testng.annotations.Test;
 
+import org.testng.annotations.Test;
 
 import com.HomePage.SearchFunctionalityTest2;
 import com.LoginModulePage.LoginPage;
 
 import Com.BaseModule.launchbrowser;
+
 public class SearchFunctionalitypageTest extends launchbrowser {
+
+	public SearchFunctionalityTest2 SearchPage;
+	public LoginPage LP;
+
 	@Test
-	public void validateSearchFucntionality() throws InterruptedException {
-
-		LoginPage LP = new LoginPage(driver);
-
+	public void testJewelrySearch() throws InterruptedException {
+		LP = new LoginPage(driver);
 		LP.loginpagewebelement(driver);
+		SearchPage = new SearchFunctionalityTest2(driver);
+		//SearchPage.searchForItemChains();
+		//SearchPage.searchForItemNosePins(driver);
 
-		SearchFunctionalityTest2 search = new SearchFunctionalityTest2(driver);
-		 search.searchFunctionality(driver);
-
-	//	search.selectcity();
-
+		SearchPage.searchForItemsearchInputNecklace(driver);
+		
+		
 	}
 }

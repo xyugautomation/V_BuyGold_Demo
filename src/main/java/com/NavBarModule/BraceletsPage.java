@@ -1,8 +1,10 @@
 package com.NavBarModule;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 public class BraceletsPage {
 	@FindBy(xpath = "//a[normalize-space()='Bracelets']")
 	WebElement Bracelets;
@@ -10,7 +12,7 @@ public class BraceletsPage {
 	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/section[1]/section[2]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]")
 	WebElement noProductFoundMsg;
 
-	@FindBy(xpath = "(//p[contains(text(),'Bracelets')])") 
+	@FindBy(xpath = "(//p[contains(text(),'Bracelets')])")
 	WebElement BraceletsProductSection;
 
 	public static WebDriver driver;

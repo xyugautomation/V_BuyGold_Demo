@@ -1,122 +1,126 @@
 package com.HomePage;
 
+import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SearchFunctionalityTest2 {
 
 	public static WebDriver driver;
 
-	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/section[1]/section[1]/nav[1]/ul[1]/li[2]/div[1]/input[1] | (//input[@placeholder='Search for jewellery'])[1]")
+	@FindBy(xpath = "(//p[@class='diamond-shape'][normalize-space()='Chains'])[1]")
+	WebElement searchInputChains;
+
+	@FindBy(xpath = "(//p[@class='diamond-shape'][normalize-space()='Bangles'])[1]")
+	WebElement searchInputBangles;
+
+	@FindBy(xpath = "(//p[@class='diamond-shape'][normalize-space()='Bracelets'])[1]")
+	WebElement searchInputBracelets;
+
+	@FindBy(xpath = "(//p[@class='diamond-shape'][normalize-space()='Earrings'])[1]")
+	WebElement searchInputEarrings;
+
+	@FindBy(xpath = "(//p[@class='diamond-shape'][normalize-space()='Pendants'])[1]")
+	WebElement searchInputPendants;
+
+	@FindBy(xpath = "(//p[@class='diamond-shape'][normalize-space()='Bullion'])[1]")
+	WebElement searchInputBullion;
+
+	@FindBy(xpath = "(//p[@class='diamond-shape'][normalize-space()='Others'])[1]")
+	WebElement searchInputOthers;
+
+	@FindBy(xpath = "//nav[@class='header_webview']//input[@placeholder='Search for jewellery']")
 	WebElement searchInput;
+
+	@FindBy(xpath = "//b[normalize-space()='No Product Found']")
+	WebElement productNotFound;
+
+	@FindBy(xpath = "(//p[@class='diamond-shape'][normalize-space()='Rings'])[1]")
+	WebElement searchInputRings;
+
+	@FindBy(xpath = "(//p[@class='diamond-shape'][normalize-space()='Nose Pins'])[1]")
+	WebElement searchInputNosePins;
+
+	@FindBy(xpath = "(//p[@class='diamond-shape'][normalize-space()='Necklace'])[1]")
+	WebElement searchInputNecklace;
 
 	@FindBy(xpath = "(//img[@class='header_logo'])[1]")
 	WebElement logo;
 
-	// Constructor to initialize PageFactory elements
+	public WebDriverWait wait;
+
 	public SearchFunctionalityTest2(WebDriver driver) {
-
 		PageFactory.initElements(driver, this);
-
 	}
 
-	public void searchFunctionality(WebDriver driver) throws InterruptedException {
-		// Adding some wait to ensure the element is present
-
-		Thread.sleep(5000);
-		searchInput.sendKeys("Necklace");
-
-		System.out.println("On Home Page Necklace product is display...!!!");
-
-		Thread.sleep(5000);
-		searchInput.clear();
-
-		Thread.sleep(5000);
-		searchInput.sendKeys("Nose Pins");
-
-		System.out.println("On Home Page Nose Pins product is display...!!!");
-
-		Thread.sleep(5000);
-		searchInput.clear();
-
-		Thread.sleep(5000);
+	public void searchForItemChains() throws InterruptedException {
+		Thread.sleep(2000);
 		searchInput.sendKeys("Chains");
+		Thread.sleep(4000);
+		if (searchInputChains.isDisplayed()) {
+			System.out.println("Product is Display");
+			Thread.sleep(2000);
+		} else if (productNotFound.isDisplayed()) {
+			System.out.println("Product is not displaying");
+		}
 
-		System.out.println("On Home Page Chains product is display...!!!");
-
-		Thread.sleep(5000);
-		searchInput.clear();
-
-		Thread.sleep(5000);
-		searchInput.sendKeys("Bracelets");
-
-		System.out.println("On Home Page Bracelets product is display...!!!");
-
-		Thread.sleep(5000);
-		searchInput.clear();
-
-		Thread.sleep(5000);
-		searchInput.sendKeys("Bangles");
-
-		System.out.println("On Home Page Bangles product is display...!!!");
-
-		Thread.sleep(5000);
-		searchInput.clear();
-
-		Thread.sleep(5000);
-		searchInput.sendKeys("Rings");
-
-		System.out.println("On Home Page Rings product is display...!!!");
-
-		Thread.sleep(5000);
-		searchInput.clear();
-
-		Thread.sleep(5000);
-		searchInput.sendKeys("Earrings");
-
-		System.out.println("On Home Page Earrings product is not display...!!!");
-
-		Thread.sleep(5000);
-		searchInput.clear();
-
-		Thread.sleep(5000);
-		searchInput.sendKeys("pendants");
-
-		System.out.println("On Home Page pendants product is not display...!!!");
-
-		Thread.sleep(5000);
-		searchInput.clear();
-
-		searchInput.sendKeys("Bullion");
-
-		System.out.println("On Home Page Bullion product is display...!!!");
-
-		Thread.sleep(5000);
-		searchInput.clear();
-
-		Thread.sleep(5000);
-		searchInput.sendKeys("Others");
-
-		System.out.println("On Home Page Others product is display...!!!");
-
-		Thread.sleep(5000);
-		// negative data .....
-		searchInput.clear();
-
-		Thread.sleep(5000);
-		searchInput.sendKeys("123avhfshf");
-
-		System.out.println("On Home Page 123avhfshf product is not display...!!!");
-
-		searchInput.clear();
-
-		Thread.sleep(5000);
-		logo.click();
-
-		System.out.println("Back to The Home Page All Product are display...!!!");
-
-		driver.close();
 	}
+
+	public void searchForItemNosePins(WebDriver driver) {
+		try {
+			Thread.sleep(5000);
+
+			searchInput = driver.findElement(
+					By.xpath("//nav[@class='header_webview']//input[@placeholder='Search for jewellery']"));
+			searchInput.sendKeys("NosePins");
+
+			Thread.sleep(5000);
+
+			productNotFound = driver.findElement(By.xpath("//b[normalize-space()='No Product Found']"));
+
+			Thread.sleep(20000);
+
+			if (driver.findElements(By.xpath("(//p[@class='diamond-shape'][normalize-space()='Nose Pins'])[1]"))
+					.size() > 0) {
+				System.out.println("Product is Display");
+			} else if (productNotFound.isDisplayed()) {
+				System.out.println("Product is not displaying");
+			}
+		} catch (InterruptedException e) {
+			System.out.println("Thread interrupted.");
+		}
+
+	}
+
+	public void searchForItemsearchInputNecklace(WebDriver driver) {
+		try {
+			Thread.sleep(5000);
+
+			searchInput = driver.findElement(
+					By.xpath("//nav[@class='header_webview']//input[@placeholder='Search for jewellery']"));
+			searchInput.sendKeys("Necklace");
+
+			Thread.sleep(5000);
+
+			productNotFound = driver.findElement(By.xpath("//b[normalize-space()='No Product Found']"));
+
+			Thread.sleep(20000);
+
+			if (driver.findElements(By.xpath("(//p[@class='diamond-shape'][normalize-space()='Necklace'])[1]"))
+					.size() > 0) {
+				System.out.println("Product is Display");
+			} else if (productNotFound.isDisplayed()) {
+				System.out.println("Product is not displaying");
+			}
+
+		} catch (InterruptedException e) {
+			System.out.println("Thread interrupted.");
+		}
+
+	}
+
 }

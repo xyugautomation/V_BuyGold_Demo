@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 public class NavigationFlowLegalPrivacyinformation {
 	@Test
-	public void Heplpage() {
+	public void Heplpage() throws InterruptedException {
 	
 	
 	WebDriver driver = new ChromeDriver();
@@ -36,6 +36,10 @@ public class NavigationFlowLegalPrivacyinformation {
 	} catch (Exception e) {
 	    e.printStackTrace();
 	}
+	Thread.sleep(1000);
+	driver.navigate().back();
+	System.out.println("Back To Home Page...!!");
+
 
 }
 }

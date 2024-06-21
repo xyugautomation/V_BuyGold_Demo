@@ -13,7 +13,6 @@ public class Trustee_Login_Test extends LaunchBrowserValuer_Trustee {
 
 	public Trustee_Login TLoginPage;
 
-	
 	@Test(priority = 1)
 	public void VerifyLoginWithYourPhoneNumberDisplay() throws InterruptedException {
 

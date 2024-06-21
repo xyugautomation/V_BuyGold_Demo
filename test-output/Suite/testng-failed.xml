@@ -3,55 +3,16 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Com.ValuerModuleTest.TicketStatusPageTest">
+      <class name="Com.HomePageTest.HomePageTest">
         <methods>
-          <include name="testNoDataFoundVisibility"/>
+          <include name="validateSellNowButtonDetails"/>
           <include name="setup"/>
-          <include name="testSearchButtonVisibility"/>
-          <include name="testPreviousAndNextVisibility"/>
-          <include name="testTableTextVisibility"/>
-          <include name="testRaisedTicketsTextVisibility"/>
+          <include name="ValidateNavBarDisplay"/>
+          <include name="validateWebElementPresentinthepage"/>
+          <include name="validateNotification_buttonDeatils"/>
+          <include name="validateReset_buttonDeatils"/>
         </methods>
-      </class> <!-- Com.ValuerModuleTest.TicketStatusPageTest -->
-      <class name="Com.ValuerModuleTest.CommissionPageTest">
-        <methods>
-          <include name="VerifyCommissionEarnedDsipaly"/>
-          <include name="setup"/>
-          <include name="Verifypreviousandnextbuttons"/>
-          <include name="AllTextDisplay"/>
-          <include name="NoProductDisplay"/>
-        </methods>
-      </class> <!-- Com.ValuerModuleTest.CommissionPageTest -->
-      <class name="Com.ValuerModuleTest.RaiseTicketPageTest">
-        <methods>
-          <include name="ReportanIssueDisplay"/>
-          <include name="VerifyLessThen30CharErrormsgdisplay"/>
-          <include name="setup"/>
-          <include name="submitbuttonenabled30char"/>
-          <include name="TextBoxDisplay"/>
-          <include name="tearDown"/>
-          <include name="SubmitbuttonDisplay"/>
-        </methods>
-      </class> <!-- Com.ValuerModuleTest.RaiseTicketPageTest -->
-      <class name="Com.ValuerModuleTest.RejectedProductsPageTest">
-        <methods>
-          <include name="testNoProductFoundVisibility"/>
-          <include name="setup"/>
-          <include name="testTillNowRejectedProductsTextVisibility"/>
-          <include name="testSerchButtonVisibility"/>
-          <include name="testPreviousAndNextVisibility"/>
-          <include name="testTableTextVisibility"/>
-          <include name="testsearchButtonEnterData"/>
-        </methods>
-      </class> <!-- Com.ValuerModuleTest.RejectedProductsPageTest -->
-      <class name="Com.ValuerModuleTest.AcceptedproductsPageTest">
-        <methods>
-          <include name="Verifypreviousandnextbuttonsaredisplayed"/>
-          <include name="Verifysearchbuttonisdisplayed"/>
-          <include name="setup"/>
-          <include name="verifyTableTextDsiplay"/>
-        </methods>
-      </class> <!-- Com.ValuerModuleTest.AcceptedproductsPageTest -->
+      </class> <!-- Com.HomePageTest.HomePageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

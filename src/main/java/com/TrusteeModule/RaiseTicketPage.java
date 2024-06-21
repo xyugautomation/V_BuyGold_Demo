@@ -104,15 +104,14 @@ public class RaiseTicketPage {
 
 	}
 
+	// Method to check if submit button is enabled
+	public boolean isSubmitButtonEnabled() {
+		return submitbutton.isEnabled();
+	}
 
-    // Method to check if submit button is enabled
-    public boolean isSubmitButtonEnabled() {
-        return submitbutton.isEnabled();
-    }
+	// Method to get the entered text from the issue description text box
+	public String getEnteredText() {
+		return TextBox.getAttribute("value");
+	}
 
-    // Method to get the entered text from the issue description text box
-    public String getEnteredText() {
-        return TextBox.getAttribute("value");
-    }
-    
 }

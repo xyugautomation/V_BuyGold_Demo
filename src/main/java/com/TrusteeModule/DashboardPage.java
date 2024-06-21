@@ -11,8 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DashboardPage {
 	WebDriver driver;
-	 private WebDriverWait wait;
-	
+	private WebDriverWait wait;
+
 	// side menu xpath
 	@FindBy(xpath = "//span[normalize-space()='Seller Status']")
 	public static WebElement sideMenuSeller;
@@ -43,14 +43,7 @@ public class DashboardPage {
 
 	@FindBy(xpath = "//span[normalize-space()='Commission']")
 	public static WebElement sideMenuComssion;
-	
-	
-	
-	
-	
-	
-	
-	
+
 	By title = By.tagName("title");
 	public By waitingForSellerProductApproval = By
 			.xpath("//p[normalize-space()='Waiting for seller product approval']");
@@ -67,7 +60,7 @@ public class DashboardPage {
 
 	public DashboardPage(WebDriver driver) {
 		this.driver = driver;
-		 this.wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // Adjust the wait time as needed
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // Adjust the wait time as needed
 	}
 
 	public String getTitle() throws InterruptedException {
@@ -155,132 +148,66 @@ public class DashboardPage {
 		return driver.findElement(earnedCommissions).isEnabled();
 	}
 
-	
-	
-	
-	
-	
-	
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+	// Method to check if a side menu item is displayed
+	public boolean isSideMenuItemDisplayed2(WebElement menuItem) {
+		if (menuItem == null) {
+			return false;
+		}
+		try {
+			return menuItem.isDisplayed();
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+	}
 
-    
-    
-    
-    
-    
- // Method to check if a side menu item is displayed
-    public boolean isSideMenuItemDisplayed2(WebElement menuItem) {
-        if (menuItem == null) {
-            return false;
-        }
-        try {
-            return menuItem.isDisplayed();
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-    }
-    
-    
-    // Methods to check if each specific side menu item is displayed
-    public boolean isSideMenuSellerDisplayed() throws InterruptedException {
-    Thread.sleep(2000);
-    return isSideMenuItemDisplayed2(sideMenuSeller);
-    }
+	// Methods to check if each specific side menu item is displayed
+	public boolean isSideMenuSellerDisplayed() throws InterruptedException {
+		Thread.sleep(2000);
+		return isSideMenuItemDisplayed2(sideMenuSeller);
+	}
 
-    public boolean isSideMenuSellerApprovalPendingDisplayed() throws InterruptedException {
-    	  Thread.sleep(2000);
-        return isSideMenuItemDisplayed2(sideMenuSellerApprovalPending);
-    }
+	public boolean isSideMenuSellerApprovalPendingDisplayed() throws InterruptedException {
+		Thread.sleep(2000);
+		return isSideMenuItemDisplayed2(sideMenuSellerApprovalPending);
+	}
 
-    public boolean isSideMenuSellerPendingGoldDepositsDisplayed()  throws InterruptedException{
-    	  Thread.sleep(2000);
-        return isSideMenuItemDisplayed2(sideMenuSellerPendingGoldDeposits);
-    }
+	public boolean isSideMenuSellerPendingGoldDepositsDisplayed() throws InterruptedException {
+		Thread.sleep(2000);
+		return isSideMenuItemDisplayed2(sideMenuSellerPendingGoldDeposits);
+	}
 
-    public boolean isSideMenuSellerPayoutsDisplayed() throws InterruptedException {
-    	  Thread.sleep(2000);
-        return isSideMenuItemDisplayed2(sideMenuSellerPayouts);
-    }
+	public boolean isSideMenuSellerPayoutsDisplayed() throws InterruptedException {
+		Thread.sleep(2000);
+		return isSideMenuItemDisplayed2(sideMenuSellerPayouts);
+	}
 
-    public boolean isSideMenuBuyerStatusDisplayed()  throws InterruptedException{
-    	  Thread.sleep(2000);
-        return isSideMenuItemDisplayed2(sideMenuBuyerStatus);
-    }
+	public boolean isSideMenuBuyerStatusDisplayed() throws InterruptedException {
+		Thread.sleep(2000);
+		return isSideMenuItemDisplayed2(sideMenuBuyerStatus);
+	}
 
-    public boolean isSideMenuBuyerStatusPendingPickupAndDepositDisplayed() throws InterruptedException {
-    	  Thread.sleep(2000);
-        return isSideMenuItemDisplayed2(sideMenuBuyerStatusPendingPickupAndDeposit);
-    }
+	public boolean isSideMenuBuyerStatusPendingPickupAndDepositDisplayed() throws InterruptedException {
+		Thread.sleep(2000);
+		return isSideMenuItemDisplayed2(sideMenuBuyerStatusPendingPickupAndDeposit);
+	}
 
-    public boolean isSideMenuBuyerStatusDeliveredProductsDisplayed() throws InterruptedException{
-    	  Thread.sleep(2000);
-        return isSideMenuItemDisplayed2(sideMenuBuyerStatusDeleveredProducts);
-    }
+	public boolean isSideMenuBuyerStatusDeliveredProductsDisplayed() throws InterruptedException {
+		Thread.sleep(2000);
+		return isSideMenuItemDisplayed2(sideMenuBuyerStatusDeleveredProducts);
+	}
 
-    public boolean isSideMenuRaiseTicketDisplayed()throws InterruptedException {
-    	  Thread.sleep(2000);
-        return isSideMenuItemDisplayed2(sideMenuRaiseTicket);
-    }
+	public boolean isSideMenuRaiseTicketDisplayed() throws InterruptedException {
+		Thread.sleep(2000);
+		return isSideMenuItemDisplayed2(sideMenuRaiseTicket);
+	}
 
-    public boolean isSideMenuTicketStatusDisplayed() throws InterruptedException {
-    	  Thread.sleep(2000);
-        return isSideMenuItemDisplayed2(sideMenuTicketStatus);
-    }
+	public boolean isSideMenuTicketStatusDisplayed() throws InterruptedException {
+		Thread.sleep(2000);
+		return isSideMenuItemDisplayed2(sideMenuTicketStatus);
+	}
 
-    public boolean isSideMenuCommissionDisplayed() throws InterruptedException {
-    	  Thread.sleep(2000);
-        return isSideMenuItemDisplayed2(sideMenuComssion);
-    }
+	public boolean isSideMenuCommissionDisplayed() throws InterruptedException {
+		Thread.sleep(2000);
+		return isSideMenuItemDisplayed2(sideMenuComssion);
+	}
 }

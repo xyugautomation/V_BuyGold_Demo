@@ -9,14 +9,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import com.ValuerModule.PendingProductsPage;
+import com.ValuerModule.Valuer_Login;
 
 public class sellNowPageTestexample {
 	public static WebDriver driver;
 	public static JavascriptExecutor js;
+	public static PendingProductsPage pendingproductpage;
+	public static Valuer_Login vlogin;
+
 	@FindBy(xpath = "(//button[@class='sell_btn'][normalize-space()='Sell Now'])[1]  | //ul[@class='header_section']//div//button[@class='sell_btn'][normalize-space()='Sell Now'] ")
 	WebElement sellnowButton;
 
@@ -71,19 +77,18 @@ public class sellNowPageTestexample {
 	@FindBy(xpath = "//button[normalize-space()='Select Valuer']")
 	WebElement selectvaluer;
 
-	@FindBy(xpath = "//body//app-root//div[@class='inputforms']//div//div[10]")
+	@FindBy(xpath = "//h6[@class='gold-paras' and text()='Shiv_Patil']")
 	WebElement Shiv_valuerclick;
 
-	@FindBy(xpath="//button[normalize-space()='Ok']")
+	@FindBy(xpath = "//button[normalize-space()='Ok']")
 	WebElement AcceptOkButton;
-	
-	@FindBy(xpath="//button[normalize-space()='Save']")
+
+	@FindBy(xpath = "//button[normalize-space()='Save']")
 	WebElement saveButton;
-	
-	@FindBy(xpath="//button[normalize-space()='Go To Dashboard']")
+
+	@FindBy(xpath = "//button[normalize-space()='Go To Dashboard']")
 	WebElement GoToDashBoard;
-	
-	
+
 	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/section[1]/section[1]/nav[1]/ul[1]/li[1] ")
 	WebElement logo;
 
@@ -111,6 +116,17 @@ public class sellNowPageTestexample {
 
 	}
 
+	public void PersonalInformationempty() throws InterruptedException {
+		Thread.sleep(8000);
+		sellnowButton.click();
+		Thread.sleep(8000);
+		continuebutton.click();
+		Thread.sleep(3000);
+		WebElement errorMessage = driver.findElement(By.xpath("//p[normalize-space()='Your Name is required']"));
+		String errorMessageText = errorMessage.getText();
+		Assert.assertEquals(errorMessageText, "Your Name is required", "Error message not displayed or incorrect");
+	}
+
 	public void FillYourJewelleryDetails() throws InterruptedException {
 		Thread.sleep(4000);
 		Select select = new Select(ProductType);
@@ -132,44 +148,55 @@ public class sellNowPageTestexample {
 		Thread.sleep(4000);
 		productdamagedescriptionfulldamage.click();
 		Thread.sleep(4000);
-		productDescription.sendKeys("this product is fullydamage");
+		productDescription.sendKeys("this product is fully damage");
 
 	}
 
 	public void fileupload() throws InterruptedException, AWTException {
-
-		// Get the document height
 		Long documentHeight = (Long) js
 				.executeScript("return Math.max(" + "document.body.scrollHeight, document.documentElement.scrollHeight,"
 						+ "document.body.offsetHeight, document.documentElement.offsetHeight,"
 						+ "document.body.clientHeight, document.documentElement.clientHeight);");
-		// Assuming js is your JavaScriptExecutor instance
 		js.executeScript("window.scrollTo(0, arguments[0]);", documentHeight);
 		Thread.sleep(5000);
 		ChooseFile.click();
 		Thread.sleep(2000);
-		// Specify the file path
 		String filePath = "C:\\v_BuyAutomation\\download.jpg";
-		// Use Robot class to interact with the system-level file dialog
 		Robot robot = new Robot();
-		// Copy the file path to clipboard
-		StringSelection stringSelection = new StringSelection(filePath); 
-		
+		StringSelection stringSelection = new StringSelection(filePath);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
-		// Paste the file path into the file dialog and press Enter
 		robot.keyPress(KeyEvent.VK_CONTROL);
 		robot.keyPress(KeyEvent.VK_V);
 		robot.keyRelease(KeyEvent.VK_V);
 		robot.keyRelease(KeyEvent.VK_CONTROL);
-		robot.delay(1000); // Delay to ensure the path is pasted
+		robot.delay(1000);
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 
 	}
 
-	public void selectValuer() throws InterruptedException {
+	private void scrollElementIntoView(WebDriver driver, WebElement element) {
+		Actions actions = new Actions(driver);
+		actions.moveToElement(element);
+		actions.perform();
+	}
 
+	public void scrollToBottom(WebDriver driver) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+	}
+
+	public void selectValuer(WebDriver driver) throws InterruptedException {
+		scrollToBottom(driver);
+		if (driver == null) {
+			throw new IllegalArgumentException("Driver must be initialized before calling selectValuer method.");
+		}
+
+		Thread.sleep(4000);
 		selectvaluer.click();
+		Thread.sleep(4000);
+		scrollToBottom(driver);
+		scrollElementIntoView(driver, Shiv_valuerclick);
 		Thread.sleep(4000);
 		Shiv_valuerclick.click();
 		Thread.sleep(4000);
@@ -178,27 +205,22 @@ public class sellNowPageTestexample {
 		saveButton.click();
 		Thread.sleep(4000);
 		GoToDashBoard.click();
-
 	}
 
-	public void PersonalInformationempty() throws InterruptedException {
-		Thread.sleep(8000);
-		// Click the Sell Now button
-		sellnowButton.click();
+	public void openLinkInNewTab(String url, WebDriver driver) throws InterruptedException, AWTException {
+		((JavascriptExecutor) driver).executeScript("window.open(arguments[0])", url);
+		String newTab = driver.getWindowHandles().toArray(new String[0])[1];
+		driver.switchTo().window(newTab);
+		vlogin = new Valuer_Login(driver);
+		vlogin.ValuerLoginWithMobileNumber(driver);
+		pendingproductpage = new PendingProductsPage(driver);
+		pendingproductpage.sidemenucommisonbuttonclick();
+		pendingproductpage.ViewButton(driver);
+		pendingproductpage.scrollThePageEnd(driver);
+		pendingproductpage.vluerprice(driver);
+		pendingproductpage.fileupload(driver);
+		pendingproductpage.acceptButton();
 
-		Thread.sleep(8000);
-		continuebutton.click();
-
-		Thread.sleep(3000);
-
-		WebElement errorMessage = driver.findElement(By.xpath("//p[normalize-space()='Your Name is required']"));
-
-		// Get the text of the error message
-		String errorMessageText = errorMessage.getText();
-
-		// Validate if the error message is displayed correctly
-		Assert.assertEquals(errorMessageText, "Your Name is required", "Error message not displayed or incorrect");
 	}
-
 
 }

@@ -53,7 +53,6 @@ public class LoginPage {
 
 	public void loginpagewebelement(WebDriver driver) {
 		LoginButton.click();
-		
 
 		fluentWaitForElementToBeClickable(driver, continuewithphone).click();
 		fluentWaitForElementToBeVisible(driver, PhoneNumber).sendKeys("6305349069");

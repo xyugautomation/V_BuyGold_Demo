@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Com.TrusteeModuleTest.BuyerStatus_PendingPickupAndDepositPageTest">
+      <class name="com.AdminModule.LivePriceUpdateTest">
         <methods>
-          <include name="setup"/>
-          <include name="VerifyCommissionEarnedDsipaly"/>
+          <include name="TestLivePrice"/>
         </methods>
-      </class> <!-- Com.TrusteeModuleTest.BuyerStatus_PendingPickupAndDepositPageTest -->
+      </class> <!-- com.AdminModule.LivePriceUpdateTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

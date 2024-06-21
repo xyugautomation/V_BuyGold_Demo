@@ -12,7 +12,7 @@ public class filterPage {
 
 	public static WebDriver driver;
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/app-home[1]/section[1]/div[1]/div[2]/div[1]/select[1]")
-	WebElement SelectCaret;
+	WebElement SelectCarat;
 
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/app-home[1]/section[1]/div[1]/div[2]/div[2]/select[1]")
 	WebElement selectWeight;
@@ -39,7 +39,7 @@ public class filterPage {
 
 		for (int i = 0; i < 3; i++) {
 			Thread.sleep(2000);
-			Select dropdown = new Select(SelectCaret);
+			Select dropdown = new Select(SelectCarat);
 			dropdown.selectByIndex(i);
 			System.out.println("Selected carat option: " + dropdown.getFirstSelectedOption().getText());
 			Thread.sleep(2000);

@@ -61,32 +61,23 @@ public class TrusteeRegister {
 	@FindBy(xpath = "//button[normalize-space()='Save & Continue']")
 	public static WebElement SaveAndContinue;
 
-	
 	// personal information invalidate data xpath
 
-		@FindBy(xpath = "//div[@class='validationError ng-star-inserted']")
-		public static WebElement mobileNumberErrorMsg;
+	@FindBy(xpath = "//div[@class='validationError ng-star-inserted']")
+	public static WebElement mobileNumberErrorMsg;
 
-		@FindBy(xpath = "  //div[normalize-space()='Please enter a valid email.']")
-		public static WebElement emailIDErrorMsg;
+	@FindBy(xpath = "  //div[normalize-space()='Please enter a valid email.']")
+	public static WebElement emailIDErrorMsg;
 
-		@FindBy(xpath = "//div[contains(text(),'Please enter a valid pin code.')]")
-		public static WebElement pincodeerrormsg;
+	@FindBy(xpath = "//div[contains(text(),'Please enter a valid pin code.')]")
+	public static WebElement pincodeerrormsg;
 
-		@FindBy(xpath = "//div[normalize-space()='Day is required.']")
-		public static WebElement dayerrormsg;
+	@FindBy(xpath = "//div[normalize-space()='Day is required.']")
+	public static WebElement dayerrormsg;
 
-		@FindBy(xpath = "//app-valstepone[@class='ng-star-inserted']//p[@class='launch-carrea-paragraph'][normalize-space()='Become a Valuer with V-Buy Gold in 10 Minutes']")
-		public static WebElement valuerwebpageclick;
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@FindBy(xpath = "//app-valstepone[@class='ng-star-inserted']//p[@class='launch-carrea-paragraph'][normalize-space()='Become a Valuer with V-Buy Gold in 10 Minutes']")
+	public static WebElement valuerwebpageclick;
+
 	// Experience form xpath
 
 	@FindBy(xpath = "//select[@id='fname']")
@@ -229,11 +220,6 @@ public class TrusteeRegister {
 
 	}
 
-	
-	
-	
-	
-	
 	// negative test cases
 
 	public void personalinformationinvalid(WebDriver driver) throws InterruptedException {
@@ -250,16 +236,15 @@ public class TrusteeRegister {
 		// Wait until the element is visible
 		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-        wait1.until(ExpectedConditions.visibilityOf(SelectDay));
+		wait1.until(ExpectedConditions.visibilityOf(SelectDay));
 
 //        // Create Actions class object
 //        Actions actions = new Actions(driver);
 //
 //        // Double click on the element
 //        actions.doubleClick(selectDay).perform();
-		
 
-		//wait.until(ExpectedConditions.visibilityOf(valuerwebpageclick)).click();
+		// wait.until(ExpectedConditions.visibilityOf(valuerwebpageclick)).click();
 
 		Thread.sleep(2000);
 		// Scrolling to the end of the page
@@ -288,19 +273,5 @@ public class TrusteeRegister {
 		PinCode.clear();
 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

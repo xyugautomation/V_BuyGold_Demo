@@ -9,7 +9,7 @@ import com.SellNowPage.sellNowPageTestexample;
 
 import Com.BaseModule.launchbrowser;
 
-public class SellNowPageTest2 extends launchbrowser{
+public class SellNowPageTest2 extends launchbrowser {
 	@Test
 	public void validatesellnowformfillfull() throws InterruptedException, AWTException {
 
@@ -25,12 +25,10 @@ public class SellNowPageTest2 extends launchbrowser{
 
 		sellnow.fileupload();
 
-		sellnow.selectValuer();
+		sellnow.selectValuer(driver);
+
+		sellnow.openLinkInNewTab("http://52.77.24.76:81/dashboard", driver);
 
 	}
 
-
-
-
 }
-

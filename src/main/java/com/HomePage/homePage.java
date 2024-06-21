@@ -19,13 +19,13 @@ public class homePage {
 	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/section[1]/section[1]/nav[1]/ul[1]/li[1]/img[1]")
 	WebElement V_Buy_Gold_Logo;
 
-	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/section[1]/section[2]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]")
+	@FindBy(xpath = "//button[normalize-space()='Reset']")
 	WebElement Reset_button;
 
-	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/section[1]/section[1]/nav[1]/ul[1]/li[3]/div[1]/button[1]")
+	@FindBy(xpath = "//nav[@class='header_webview']//button[@class='sell_btn'][normalize-space()='Sell Now']")
 	WebElement SellNowButton;
 
-	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/section[1]/section[1]/nav[1]/ul[1]/li[4]/div[1]/img[1]")
+	@FindBy(xpath = "//li[@class='user_info_btn']//div[@class='notification ng-star-inserted']//img")
 	WebElement Notification_button;
 
 	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/section[1]/section[1]/nav[1]/ul[1]/li[4]/div[2]/div[1]/span[1]")

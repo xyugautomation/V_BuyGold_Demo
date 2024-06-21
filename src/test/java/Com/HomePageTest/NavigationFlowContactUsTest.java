@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 public class NavigationFlowContactUsTest {
 	@Test
-	public void ContactUspage() {
+	public void ContactUspage() throws InterruptedException {
 	
 	
 	WebDriver driver = new ChromeDriver();
@@ -36,6 +36,8 @@ public class NavigationFlowContactUsTest {
 	} catch (Exception e) {
 	    e.printStackTrace();
 	}
-
+	Thread.sleep(1000);
+	driver.navigate().back();
+	System.out.println("Back To Home Page...!!");
 }
 }

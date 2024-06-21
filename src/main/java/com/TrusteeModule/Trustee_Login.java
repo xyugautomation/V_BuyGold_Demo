@@ -44,7 +44,7 @@ public class Trustee_Login {
 
 	@FindBy(xpath = "//button[normalize-space()='Yes']")
 	public static WebElement YesButton;
-	
+
 	@FindBy(xpath = "//p[contains(text(),'Your contact number is never shared with external ')]")
 	public static WebElement loginpagecontenttext;
 
@@ -57,7 +57,6 @@ public class Trustee_Login {
 	@FindBy(xpath = "//img[@src='../../../assets/v-buy-gold-logo.png']")
 	public static WebElement logo;
 
-	
 	public Trustee_Login(WebDriver driver) {
 
 		PageFactory.initElements(driver, this);
@@ -133,5 +132,4 @@ public class Trustee_Login {
 		return clickbutton.isEnabled();
 	}
 
-	
 }

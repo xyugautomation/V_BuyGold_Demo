@@ -1,8 +1,10 @@
 package com.NavBarModule;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 public class EarringsPage {
 	@FindBy(xpath = "//a[normalize-space()='Earrings']")
 	WebElement Earrings;

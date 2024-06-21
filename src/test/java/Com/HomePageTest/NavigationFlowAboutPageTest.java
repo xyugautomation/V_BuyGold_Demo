@@ -12,7 +12,7 @@ public class NavigationFlowAboutPageTest {
 	
 	
 	@Test
-	public void aboutpage() {
+	public void aboutpage() throws InterruptedException {
 	
 	
 	WebDriver driver = new ChromeDriver();
@@ -22,7 +22,7 @@ public class NavigationFlowAboutPageTest {
 	try {
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-	    WebElement linkAbout = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='About V-Buy Gold group']")));
+	    WebElement linkAbout = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='About Us']")));
 	    if (linkAbout != null) {
 	        linkAbout.click();
 	        wait.until(ExpectedConditions.titleContains("V-Buy-Gold"));
@@ -38,6 +38,9 @@ public class NavigationFlowAboutPageTest {
 	} catch (Exception e) {
 	    e.printStackTrace();
 	}
-
+	Thread.sleep(1000);
+	driver.navigate().back();
+	System.out.println("Back To Home Page...!!");
+	
 }
 }

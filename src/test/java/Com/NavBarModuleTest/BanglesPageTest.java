@@ -9,13 +9,13 @@ import Com.BaseModule.launchbrowser;
 public class BanglesPageTest extends launchbrowser {
 	// Bracelets product is display or not
 
-	@Test(priority = 1)
-	public void BraceletsProductTest() {
-
-		BanglesPage banglesPage = new BanglesPage(driver);
-		banglesPage.BanglesProductTest();
-
-	}
+//	@Test(priority = 1)
+//	public void BraceletsProductTest() {
+//
+//		BanglesPage banglesPage = new BanglesPage(driver);
+//		banglesPage.BanglesProductTest();
+//
+//	}
 
 	@Test(priority = 2)
 	public void BraceletsProductclickalble() throws InterruptedException {

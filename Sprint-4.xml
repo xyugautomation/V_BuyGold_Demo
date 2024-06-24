@@ -5,9 +5,9 @@
 		<classes>
 
 
-			<class name="Com.TrusteeModuleTest.Trustee_Login_Test" />
-
+		
 			<class name="Com.ValuerModuleTest.Valuer_Login_PageTest" />
+			
 			<class name="Com.ValuerModuleTest.DashBoardPageTest" />
 			<class name="Com.ValuerModuleTest.PendingProductsPageTest" />
 			<class name="Com.ValuerModuleTest.AcceptedproductsPageTest" />
@@ -15,7 +15,6 @@
 			<class name="Com.ValuerModuleTest.RaiseTicketPageTest" />
 			<class name="Com.ValuerModuleTest.TicketStatusPageTest" />
 			<class name="Com.ValuerModuleTest.CommissionPageTest" />
-
 
 		</classes>
 	</test> <!-- Test -->

@@ -17,11 +17,11 @@ public class SearchFunctionalitypageTest extends launchbrowser {
 		LP = new LoginPage(driver);
 		LP.loginpagewebelement(driver);
 		SearchPage = new SearchFunctionalityTest2(driver);
-		//SearchPage.searchForItemChains();
-		//SearchPage.searchForItemNosePins(driver);
+		// SearchPage.searchForItemChains();
+		// SearchPage.searchForItemNosePins(driver);
 
 		SearchPage.searchForItemsearchInputNecklace(driver);
-		
-		
+
 	}
 }
+

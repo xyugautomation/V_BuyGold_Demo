@@ -20,7 +20,8 @@ public class NavigationFlowAboutPageTest {
 	  driver.get("http://52.77.24.76/");
 
 	try {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
 
 	    WebElement linkAbout = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='About Us']")));
 	    if (linkAbout != null) {

@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.AdminModule.LivePriceUpdateTest">
+      <class name="Com.TrusteeModuleTest.DashboardPageTest">
         <methods>
-          <include name="TestLivePrice"/>
+          <include name="setup"/>
+          <include name="testPageLoad"/>
         </methods>
-      </class> <!-- com.AdminModule.LivePriceUpdateTest -->
+      </class> <!-- Com.TrusteeModuleTest.DashboardPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

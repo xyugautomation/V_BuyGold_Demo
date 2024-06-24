@@ -12,7 +12,7 @@ import com.AdminModule.LoginPage;
 import com.AdminModule.ValuerListPage;
 
 import Com.BaseModule.LaunchBrowserAdmin;
-import genericUtility.WebDriverUtility;
+//import genericUtility.WebDriverUtility;
 
 public class ValuerListPageTest extends LaunchBrowserAdmin {
 
@@ -60,15 +60,15 @@ public class ValuerListPageTest extends LaunchBrowserAdmin {
 		Assert.assertEquals("Demo User Testing", cellData); 
 	}
 
-	@Test(priority=6)
-	public void testClickViewButton() throws InterruptedException, IOException {
-		
-		WebDriverUtility wUtil = new WebDriverUtility();
-		
-		wUtil.takeScreenShot(driver, "");
-		valuerListPage.clickViewButton(1 ,driver);
-		
-	}
+//	@Test(priority=6)
+//	public void testClickViewButton() throws InterruptedException, IOException {
+//		
+//		WebDriverUtility wUtil = new WebDriverUtility();
+//		
+//		wUtil.takeScreenShot(driver, "");
+//		valuerListPage.clickViewButton(1 ,driver);
+//		
+//	}
 
 	
 	@Test

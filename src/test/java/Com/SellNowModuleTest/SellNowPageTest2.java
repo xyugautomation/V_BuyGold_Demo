@@ -27,8 +27,13 @@ public class SellNowPageTest2 extends launchbrowser {
 
 		sellnow.selectValuer(driver);
 
-		sellnow.openLinkInNewTab("http://52.77.24.76:81/dashboard", driver);
+		sellnow.openLinkInNewTab("http://stg.vbuygold.com", driver);
 
+		
+		
+
+
+		
 	}
 
 }

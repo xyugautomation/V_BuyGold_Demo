@@ -1,8 +1,10 @@
 package Com.HomePageTest;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Com.BaseModule.launchbrowser;
+
 public class PageTitleTest extends launchbrowser {
 	@Test
 	public void PageTitle() {

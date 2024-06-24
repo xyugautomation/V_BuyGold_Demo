@@ -14,10 +14,10 @@ public class SellerStatus_PendingGoldDepositsPageTest extends LaunchBrowserValue
 	public static Trustee_Login trusteepage;
 
 //	 Verify that the text "Commission Earned" is displayed for products awaiting approval.
-	@Test(priority = 1)
+	@Test(priority = 18)
 	public void VerifyCommissionEarnedDsipaly() throws InterruptedException {
-		trusteepage = new Trustee_Login(driver);
-		trusteepage.TrusteeMobileNumber(driver);
+//		trusteepage = new Trustee_Login(driver);
+//		trusteepage.TrusteeMobileNumber(driver);
 		CP = new SellerStatus_PendingGoldDeposits(driver);
 		CP.sellerStatusClick();
 		System.out.println("Seller For Deposit Gold  Text is displayed: " + CP.isCommissionEarnedTextDisplayed());
@@ -25,7 +25,7 @@ public class SellerStatus_PendingGoldDepositsPageTest extends LaunchBrowserValue
 	}
 
 //	 Verify that the previous and next buttons are displayed for navigating between pages of products.
-	@Test(priority = 2)
+	@Test(priority = 19)
 	public void Verifypreviousandnextbuttons() throws InterruptedException {
 		CP = new SellerStatus_PendingGoldDeposits(driver);
 		System.out.println("Previous And Next is displayed: " + CP.isPreviousAndNextDisplayed());
@@ -33,7 +33,7 @@ public class SellerStatus_PendingGoldDepositsPageTest extends LaunchBrowserValue
 	}
 
 //	 Verify that all expected text elements are displayed on the pending products page.
-	@Test(priority = 3)
+	@Test(priority = 20)
 	public void AllTextDisplay() throws InterruptedException {
 		CP = new SellerStatus_PendingGoldDeposits(driver);
 		System.out.println("Table Text is displayed: " + CP.isTableTextDisplayed());
@@ -41,7 +41,7 @@ public class SellerStatus_PendingGoldDepositsPageTest extends LaunchBrowserValue
 	}
 
 //	 Verify that products are displayed in the pending products module.
-	@Test(priority = 4)
+	@Test(priority = 21)
 	public void NoProductDisplay() throws InterruptedException {
 
 		CP = new SellerStatus_PendingGoldDeposits(driver);

@@ -6,78 +6,28 @@
       <class name="Com.TrusteeModuleTest.SellerStatus_PendingGoldDepositsPageTest">
         <methods>
           <include name="setup"/>
-          <include name="Verifypreviousandnextbuttons"/>
-          <include name="NoProductDisplay"/>
-          <include name="AllTextDisplay"/>
           <include name="VerifyCommissionEarnedDsipaly"/>
         </methods>
       </class> <!-- Com.TrusteeModuleTest.SellerStatus_PendingGoldDepositsPageTest -->
-      <class name="Com.TrusteeModuleTest.CommissionPageTest">
-        <methods>
-          <include name="NoProductDisplay"/>
-          <include name="AllTextDisplay"/>
-          <include name="setup"/>
-          <include name="VerifyCommissionEarnedDsipaly"/>
-          <include name="Verifypreviousandnextbuttons"/>
-        </methods>
-      </class> <!-- Com.TrusteeModuleTest.CommissionPageTest -->
-      <class name="Com.TrusteeModuleTest.BuyerStatus_PendingPickupAndDepositPageTest">
-        <methods>
-          <include name="setup"/>
-          <include name="VerifyCommissionEarnedDsipaly"/>
-          <include name="AllTextDisplay"/>
-          <include name="NoProductDisplay"/>
-          <include name="Verifypreviousandnextbuttons"/>
-        </methods>
-      </class> <!-- Com.TrusteeModuleTest.BuyerStatus_PendingPickupAndDepositPageTest -->
-      <class name="Com.TrusteeModuleTest.SellerStatus_SellerPayoutsPageTest">
-        <methods>
-          <include name="NoProductDisplay"/>
-          <include name="AllTextDisplay"/>
-          <include name="setup"/>
-          <include name="Verifypreviousandnextbuttons"/>
-          <include name="VerifyCommissionEarnedDsipaly"/>
-        </methods>
-      </class> <!-- Com.TrusteeModuleTest.SellerStatus_SellerPayoutsPageTest -->
       <class name="Com.TrusteeModuleTest.TicketStatusPageTest">
         <methods>
-          <include name="testTableTextVisibility"/>
-          <include name="testPreviousAndNextVisibility"/>
           <include name="setup"/>
-          <include name="testSearchButtonVisibility"/>
-          <include name="testRaisedTicketsTextVisibility"/>
           <include name="testNoDataFoundVisibility"/>
         </methods>
       </class> <!-- Com.TrusteeModuleTest.TicketStatusPageTest -->
-      <class name="Com.TrusteeModuleTest.SellerStatus_ApprovalPendingPageTest">
-        <methods>
-          <include name="setup"/>
-          <include name="Verifypreviousandnextbuttons"/>
-          <include name="AllTextDisplay"/>
-          <include name="VerifyCommissionEarnedDsipaly"/>
-          <include name="NoProductDisplay"/>
-        </methods>
-      </class> <!-- Com.TrusteeModuleTest.SellerStatus_ApprovalPendingPageTest -->
       <class name="Com.TrusteeModuleTest.DashboardPageTest">
         <methods>
           <include name="setup"/>
+          <include name="testLiveGoldPricesDisplay"/>
+          <include name="testPageLoad"/>
+          <include name="testInitialStateOverviewTiles"/>
           <include name="testTilesClickable"/>
         </methods>
       </class> <!-- Com.TrusteeModuleTest.DashboardPageTest -->
-      <class name="Com.TrusteeModuleTest.RaiseTicketPageTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="SubmitbuttonDisplay"/>
-        </methods>
-      </class> <!-- Com.TrusteeModuleTest.RaiseTicketPageTest -->
       <class name="Com.TrusteeModuleTest.BuyerStatus_DeliveredProductsPageTest">
         <methods>
           <include name="VerifyCommissionEarnedDsipaly"/>
           <include name="setup"/>
-          <include name="Verifypreviousandnextbuttons"/>
-          <include name="AllTextDisplay"/>
-          <include name="NoProductDisplay"/>
         </methods>
       </class> <!-- Com.TrusteeModuleTest.BuyerStatus_DeliveredProductsPageTest -->
     </classes>

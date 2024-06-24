@@ -21,10 +21,7 @@ public class DashboardPage {
 
 	@FindBy(xpath = "//a[@class='ng-tns-c3299933523-3 ng-star-inserted active'] | //span[normalize-space()='Dashboard']")
 	public static WebElement DashboardButton;
-	
-	
-	
-	
+
 	@FindBy(xpath = "//span[normalize-space()='Approval Pending']")
 	public static WebElement sideMenuSellerApprovalPending;
 
@@ -220,129 +217,110 @@ public class DashboardPage {
 		return isSideMenuItemDisplayed2(sideMenuComssion);
 	}
 
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	// Methods to check if each button is clickable
-		public boolean isDashboardButtonClickable(WebDriver driver) throws InterruptedException {
+	public boolean isDashboardButtonClickable(WebDriver driver) throws InterruptedException {
 
-			Thread.sleep(2000);
+		Thread.sleep(2000);
 
-			DashboardButton.click();
+		DashboardButton.click();
 
-			return waitForElementToBeClickable(driver, DashboardButton);
+		return waitForElementToBeClickable(driver, DashboardButton);
+	}
+
+	public boolean issideMenuSellerApprovalPendingButtonClickable(WebDriver driver) throws InterruptedException {
+		Thread.sleep(3000);
+
+		sideMenuSeller.click();
+		Thread.sleep(3000);
+		;
+		sideMenuSellerApprovalPending.click();
+
+		return waitForElementToBeClickable(driver, sideMenuSellerApprovalPending);
+	}
+
+	public boolean issideMenuSellerPendingGoldDepositsButtonClickable(WebDriver driver) throws InterruptedException {
+
+		Thread.sleep(3000);
+		sideMenuSellerPendingGoldDeposits.click();
+
+		return waitForElementToBeClickable(driver, sideMenuSellerPendingGoldDeposits);
+	}
+
+	public boolean issideMenuSellerPayoutsButtonClickable(WebDriver driver) throws InterruptedException {
+		Thread.sleep(3000);
+		sideMenuSellerPayouts.click();
+		return waitForElementToBeClickable(driver, sideMenuSellerPayouts);
+	}
+
+	public boolean issideMenuBuyerStatusButtonClickable(WebDriver driver) throws InterruptedException {
+		Thread.sleep(3000);
+		sideMenuBuyerStatus.click();
+		return waitForElementToBeClickable(driver, sideMenuBuyerStatus);
+	}
+
+	public boolean issideMenuBuyerStatusPendingPickupAndDepositButtonClickable(WebDriver driver)
+			throws InterruptedException {
+
+		Thread.sleep(3000);
+		sideMenuBuyerStatusPendingPickupAndDeposit.click();
+		return waitForElementToBeClickable(driver, sideMenuBuyerStatusPendingPickupAndDeposit);
+	}
+
+	public boolean issideMenuBuyerStatusDeleveredProductsClickable(WebDriver driver) throws InterruptedException {
+
+		Thread.sleep(3000);
+		sideMenuBuyerStatusDeleveredProducts.click();
+		return waitForElementToBeClickable(driver, sideMenuBuyerStatusDeleveredProducts);
+	}
+
+	public boolean issideMenuRaiseTicketButtonClickable1(WebDriver driver) throws InterruptedException {
+
+		Thread.sleep(3000);
+		sideMenuRaiseTicket.click();
+		return waitForElementToBeClickable(driver, sideMenuRaiseTicket);
+	}
+
+	public boolean issideMenuTicketStatusButtonClickable2(WebDriver driver) throws InterruptedException {
+
+		Thread.sleep(3000);
+		sideMenuTicketStatus.click();
+		return waitForElementToBeClickable(driver, sideMenuTicketStatus);
+	}
+
+	public boolean issideMenusideMenuComssionButtonClickable2(WebDriver driver) throws InterruptedException {
+
+		Thread.sleep(3000);
+		sideMenuComssion.click();
+		return waitForElementToBeClickable(driver, sideMenuComssion);
+	}
+
+	public void ClicksideMenuComssionbutton(WebDriver driver) throws InterruptedException {
+
+		Thread.sleep(2000);
+		sideMenuComssion.click();
+
+		Thread.sleep(3000);
+		DashboardButton.click();
+
+	}
+
+	// Method to wait for an element to be clickable
+	private boolean waitForElementToBeClickable(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+			return true;
+		} catch (Exception e) {
+			return false;
 		}
+	}
 
-		public boolean issideMenuSellerApprovalPendingButtonClickable(WebDriver driver) throws InterruptedException {
-			Thread.sleep(3000);
+	// Getter for dashboardButton
+	public WebElement getDashboardButton() {
+		return DashboardButton;
+	}
 
-			sideMenuSeller.click();
-			Thread.sleep(3000);;
-			sideMenuSellerApprovalPending.click();
-
-			return waitForElementToBeClickable(driver, sideMenuSellerApprovalPending);
-		}
-
-		public boolean issideMenuSellerPendingGoldDepositsButtonClickable(WebDriver driver) throws InterruptedException {
-
-			Thread.sleep(3000);
-			sideMenuSellerPendingGoldDeposits.click();
-
-			return waitForElementToBeClickable(driver, sideMenuSellerPendingGoldDeposits);
-		}
-
-		public boolean issideMenuSellerPayoutsButtonClickable(WebDriver driver) throws InterruptedException {
-			Thread.sleep(3000);
-			sideMenuSellerPayouts.click();
-			return waitForElementToBeClickable(driver, sideMenuSellerPayouts);
-		}
-
-		public boolean issideMenuBuyerStatusButtonClickable(WebDriver driver) throws InterruptedException {
-			Thread.sleep(3000);
-			sideMenuBuyerStatus.click();
-			return waitForElementToBeClickable(driver, sideMenuBuyerStatus);
-		}
-
-		public boolean issideMenuBuyerStatusPendingPickupAndDepositButtonClickable(WebDriver driver) throws InterruptedException {
-
-			
-			
-			Thread.sleep(3000);
-			sideMenuBuyerStatusPendingPickupAndDeposit.click();
-			return waitForElementToBeClickable(driver, sideMenuBuyerStatusPendingPickupAndDeposit);
-		}
-
-		public boolean issideMenuBuyerStatusDeleveredProductsClickable(WebDriver driver) throws InterruptedException {
-
-			Thread.sleep(3000);
-			sideMenuBuyerStatusDeleveredProducts.click();
-			return waitForElementToBeClickable(driver, sideMenuBuyerStatusDeleveredProducts);
-		}
-		
-		
-		public boolean issideMenuRaiseTicketButtonClickable1(WebDriver driver) throws InterruptedException {
-
-			Thread.sleep(3000);
-			sideMenuRaiseTicket.click();
-			return waitForElementToBeClickable(driver, sideMenuRaiseTicket);
-		}
-		
-		public boolean issideMenuTicketStatusButtonClickable2(WebDriver driver) throws InterruptedException {
-
-			Thread.sleep(3000);
-			sideMenuTicketStatus.click();
-			return waitForElementToBeClickable(driver, sideMenuTicketStatus);
-		}
-		
-	
-
-		public void ClicksideMenuComssionbutton(WebDriver driver) throws InterruptedException {
-			Thread.sleep(2000);
-
-			sideMenuComssion.click();
-
-			Thread.sleep(2000);
-			sideMenuComssion.click();
-
-		}
-
-		// Method to wait for an element to be clickable
-		private boolean waitForElementToBeClickable(WebDriver driver, WebElement element) {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-
-			try {
-				wait.until(ExpectedConditions.elementToBeClickable(element));
-				return true;
-			} catch (Exception e) {
-				return false;
-			}
-		}
-
-		 // Getter for dashboardButton
-	    public WebElement getDashboardButton() {
-	        return DashboardButton;
-	    }
-		
-	
-	//--------------------------------------------------------------------------------------------------------------------------
-		
-		
-	
-		
-		
-	
-	
-	
-	
-	
-	
-	   
+	// --------------------------------------------------------------------------------------------------------------------------
 
 }

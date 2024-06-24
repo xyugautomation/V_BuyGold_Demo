@@ -18,10 +18,10 @@ public class RaiseTicketPageTest extends LaunchBrowserValuer_Trustee {
 	public static Trustee_Login trusteepage;
 
 //	Verify that the submit button is displayed on the page where users can report an issue.
-	@Test(priority = 35)
+	@Test(priority = 34)
 	public static void SubmitbuttonDisplay() throws InterruptedException {
-		trusteepage = new Trustee_Login(driver);
-		trusteepage.TrusteeMobileNumber(driver);
+//		trusteepage = new Trustee_Login(driver);
+//		trusteepage.TrusteeMobileNumber(driver);
 		RaiseTicketPage raiseticketpage = new RaiseTicketPage(driver);
 		raiseticketpage.sidebuttn(driver);
 
@@ -58,7 +58,7 @@ public class RaiseTicketPageTest extends LaunchBrowserValuer_Trustee {
 	}
 
 //Verify that the text "Report an Issue" is displayed on the page where users can report an issue.
-	@Test(priority = 36)
+	@Test(priority = 35)
 	public static void ReportanIssueDisplay() throws InterruptedException {
 
 		// Perform necessary actions to navigate to the page where text "Report an
@@ -102,7 +102,7 @@ public class RaiseTicketPageTest extends LaunchBrowserValuer_Trustee {
 	}
 
 //Verify that the text box for entering the issue description is displayed on the page. 
-	@Test(priority = 37)
+	@Test(priority = 36)
 	public void TextBoxDisplay() throws InterruptedException {
 		// Initialize RaiseTicketPage instance and navigate to the page
 		RaiseTicketPage raiseticketpage = new RaiseTicketPage(driver);
@@ -142,7 +142,7 @@ public class RaiseTicketPageTest extends LaunchBrowserValuer_Trustee {
 
 //Verify that a minimum of the less then  30 characters are entered in the issue description text box.
 
-	@Test(priority = 38)
+	@Test(priority = 37)
 	public void VerifyLessThen30CharErrormsgdisplay() throws InterruptedException {
 		// Assuming 'driver' is a WebDriver instance available in your test class
 
@@ -184,7 +184,7 @@ public class RaiseTicketPageTest extends LaunchBrowserValuer_Trustee {
 
 //
 //Verify that the submit button is enabled when a minimum of 30 characters are entered in the issue description text box.
-	@Test(priority = 39)
+	@Test(priority = 38)
 	public void submitbuttonenabled30char() throws InterruptedException {
 
 		// Initialize RaiseTicketPage instance and navigate to the page

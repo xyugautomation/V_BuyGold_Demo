@@ -12,10 +12,10 @@ public class CommissionPageTest extends LaunchBrowserValuer_Trustee {
 	public static Trustee_Login trusteepage;
 
 //	 Verify that the text "Commission Earned" is displayed for products awaiting approval.
-	@Test(priority = 1)
+	@Test(priority = 44)
 	public void VerifyCommissionEarnedDsipaly() throws InterruptedException {
-		trusteepage = new Trustee_Login(driver);
-		trusteepage.TrusteeMobileNumber(driver);
+//		trusteepage = new Trustee_Login(driver);
+//		trusteepage.TrusteeMobileNumber(driver);
 		CP = new CommissionPage(driver);
 		CP.commissionmosidemenu();
 		System.out.println("Commission Earned Text is displayed: " + CP.isCommissionEarnedTextDisplayed());
@@ -23,7 +23,7 @@ public class CommissionPageTest extends LaunchBrowserValuer_Trustee {
 	}
 
 //	 Verify that the previous and next buttons are displayed for navigating between pages of products.
-	@Test(priority = 2)
+	@Test(priority = 45)
 	public void Verifypreviousandnextbuttons() throws InterruptedException {
 		CP = new CommissionPage(driver);
 		System.out.println("Previous And Next is displayed: " + CP.isPreviousAndNextDisplayed());
@@ -31,7 +31,7 @@ public class CommissionPageTest extends LaunchBrowserValuer_Trustee {
 	}
 
 //	 Verify that all expected text elements are displayed on the pending products page.
-	@Test(priority = 3)
+	@Test(priority = 46)
 	public void AllTextDisplay() throws InterruptedException {
 		CP = new CommissionPage(driver);
 		System.out.println("Table Text is displayed: " + CP.isTableTextDisplayed());
@@ -39,7 +39,7 @@ public class CommissionPageTest extends LaunchBrowserValuer_Trustee {
 	}
 
 //	 Verify that products are displayed in the pending products module.
-	@Test(priority = 4)
+	@Test(priority = 47)
 	public void NoProductDisplay() throws InterruptedException {
 
 		CP = new CommissionPage(driver);

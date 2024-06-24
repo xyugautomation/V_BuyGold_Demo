@@ -102,12 +102,12 @@ public class DashboardPageTest extends LaunchBrowserValuer_Trustee {
 
 	// Test to verify and display whether Dashboard products are clickable on the
 	// dashboard
-	@Test(priority = 12)
+	@Test(priority = 5)
 
 	public void verifyDashboardProductClickable() throws InterruptedException {
-		trusteepage = new Trustee_Login(driver);
-		//
-		trusteepage.TrusteeMobileNumber(driver);
+//		trusteepage = new Trustee_Login(driver);
+//		//
+//		trusteepage.TrusteeMobileNumber(driver);
 
 		DashboardPage dashboardPage = new DashboardPage(driver);
 
@@ -120,7 +120,7 @@ public class DashboardPageTest extends LaunchBrowserValuer_Trustee {
 
 	// Test to verify and display whether Dashboard products are clickable on the
 	// dashboard
-	@Test(priority = 13)
+	@Test(priority = 6)
 	public void verifyissideMenuSellerApprovalPendingButtonClickableClickable() throws InterruptedException {
 		dashboardPage = new DashboardPage(driver);
 		boolean clickable = dashboardPage.issideMenuSellerApprovalPendingButtonClickable(driver);
@@ -131,7 +131,7 @@ public class DashboardPageTest extends LaunchBrowserValuer_Trustee {
 
 	// Test to verify and display whether Dashboard products are clickable on the
 	// dashboard
-	@Test(priority = 14)
+	@Test(priority = 7)
 	public void issideMenuSellerPendingGoldDepositsButtonClickable() throws InterruptedException {
 		dashboardPage = new DashboardPage(driver);
 		boolean clickable = dashboardPage.issideMenuSellerPendingGoldDepositsButtonClickable(driver);
@@ -142,7 +142,7 @@ public class DashboardPageTest extends LaunchBrowserValuer_Trustee {
 
 	// Test to verify and display whether Dashboard products are clickable on the
 	// dashboard
-	@Test(priority = 15)
+	@Test(priority = 8)
 	public void issideMenuSellerPayoutsButtonClickable() throws InterruptedException {
 		dashboardPage = new DashboardPage(driver);
 		boolean clickable = dashboardPage.issideMenuSellerPayoutsButtonClickable(driver);
@@ -153,7 +153,7 @@ public class DashboardPageTest extends LaunchBrowserValuer_Trustee {
 
 	// Test to verify and display whether Dashboard products are clickable on the
 	// dashboard
-	@Test(priority = 16)
+	@Test(priority = 9)
 	public void issideMenuBuyerStatusButtonClickable() throws InterruptedException {
 		dashboardPage = new DashboardPage(driver);
 		boolean clickable = dashboardPage.issideMenuBuyerStatusButtonClickable(driver);
@@ -164,7 +164,7 @@ public class DashboardPageTest extends LaunchBrowserValuer_Trustee {
 
 	// Test to verify and display whether Dashboard products are clickable on the
 	// dashboard
-	@Test(priority = 17)
+	@Test(priority = 10)
 	public void issideMenuBuyerStatusPendingPickupAndDepositButtonClickable() throws InterruptedException {
 		dashboardPage = new DashboardPage(driver);
 		boolean clickable = dashboardPage.issideMenuBuyerStatusPendingPickupAndDepositButtonClickable(driver);
@@ -175,7 +175,7 @@ public class DashboardPageTest extends LaunchBrowserValuer_Trustee {
 
 	// Test to verify and display whether Dashboard products are clickable on the
 	// dashboard
-	@Test(priority = 18)
+	@Test(priority = 11)
 	public void issideMenuBuyerStatusDeleveredProductsClickable() throws InterruptedException {
 		dashboardPage = new DashboardPage(driver);
 		boolean clickable = dashboardPage.issideMenuBuyerStatusDeleveredProductsClickable(driver);
@@ -186,7 +186,7 @@ public class DashboardPageTest extends LaunchBrowserValuer_Trustee {
 
 	// Test to verify and display whether Dashboard products are clickable on the
 	// dashboard
-	@Test(priority = 19)
+	@Test(priority = 12)
 	public void issideMenuRaiseTicketButtonClickable1() throws InterruptedException {
 		dashboardPage = new DashboardPage(driver);
 		boolean clickable = dashboardPage.issideMenuRaiseTicketButtonClickable1(driver);
@@ -197,7 +197,7 @@ public class DashboardPageTest extends LaunchBrowserValuer_Trustee {
 
 	// Test to verify and display whether Dashboard products are clickable on the
 	// dashboard
-	@Test(priority = 20)
+	@Test(priority = 13)
 	public void issideMenuTicketStatusButtonClickable2() throws InterruptedException {
 		dashboardPage = new DashboardPage(driver);
 		boolean clickable = dashboardPage.issideMenuTicketStatusButtonClickable2(driver);

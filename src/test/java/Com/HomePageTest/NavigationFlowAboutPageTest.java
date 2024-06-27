@@ -17,7 +17,7 @@ public class NavigationFlowAboutPageTest {
 	
 	WebDriver driver = new ChromeDriver();
 	driver.manage().window().maximize();
-	  driver.get("http://52.77.24.76/");
+	  driver.get("http://stg.vbuygold.com/");
 
 	try {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
